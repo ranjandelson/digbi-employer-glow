@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import digbiLogo from "@/assets/digbi-health-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,11 +18,8 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">D</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Digbi Health</span>
+          <a href="/" className="flex items-center">
+            <img src={digbiLogo} alt="Digbi Health" className="h-10 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
