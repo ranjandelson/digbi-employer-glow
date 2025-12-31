@@ -27,7 +27,7 @@ const GLPCompassSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Why Employers Choose the GLP Compass
+            Why Employers Choose GLP Compass™
           </h2>
         </div>
 
