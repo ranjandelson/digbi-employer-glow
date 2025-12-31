@@ -8,7 +8,7 @@ const conditions = [{
   label: "Diabetes"
 }, {
   icon: Heart,
-  label: "Hypertension"
+  label: "Digestive"
 }, {
   icon: Activity,
   label: "Heart Health"
