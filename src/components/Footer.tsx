@@ -1,5 +1,5 @@
 import { Heart } from "lucide-react";
-
+import digbiLogoWhite from "@/assets/digbi-health-logo-white.png";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -34,11 +34,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <a href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">D</span>
-              </div>
-              <span className="text-xl font-bold">Digbi Health</span>
+            <a href="/" className="flex items-center mb-6">
+              <img src={digbiLogoWhite} alt="Digbi Health" className="h-10 w-auto" />
             </a>
             <p className="text-background/70 text-sm leading-relaxed mb-6">
               Precision biology care to prevent and treat obesity, diabetes, and metabolic disorders.
