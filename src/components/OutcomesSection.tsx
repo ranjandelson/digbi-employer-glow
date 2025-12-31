@@ -20,7 +20,7 @@ const outcomes = [
   },
   {
     value: "19.8/12.9",
-    unit: "mmHg",
+    unit: "",
     label: "Blood pressure reduction",
     sublabel: "Systolic/Diastolic over 12 months",
     icon: Heart,
