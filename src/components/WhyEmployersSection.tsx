@@ -39,7 +39,7 @@ const WhyEmployersSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">Why Employers Choose Digbi Health</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-emerald-800">Why Employers Choose Digbi Health</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Deliver long-term, sustainable reduction in healthcare costs while addressing the root cause of digestive, cardiometabolic, and mental health conditions.
           </p>
