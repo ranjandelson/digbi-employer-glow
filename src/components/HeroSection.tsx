@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, Activity, Pill, Scale, Droplets } from "lucide-react";
 import heroImage from "@/assets/hero-image.png";
+import cdcLogo from "@/assets/cdc-partner-logo.png";
 const conditions = [{
   icon: Scale,
   label: "Obesity"
@@ -82,6 +83,13 @@ const HeroSection = () => {
               alt="Diverse workforce - construction workers, office professionals, and business teams" 
               className="w-full max-w-lg mx-auto rounded-2xl shadow-lg"
             />
+            <div className="flex justify-center mt-6">
+              <img 
+                src={cdcLogo} 
+                alt="CDC Full Plus Partner" 
+                className="h-16 w-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
