@@ -11,10 +11,10 @@ const conditions = [{
   label: "Digestive"
 }, {
   icon: Activity,
-  label: "Heart Health"
+  label: "Cardio-metabolic"
 }, {
   icon: Pill,
-  label: "Cholesterol"
+  label: "Mental Health"
 }];
 const HeroSection = () => {
   return <section id="employers" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
