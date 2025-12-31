@@ -19,7 +19,7 @@ const reasons = [
   },
   {
     icon: Pill,
-    title: "Reclaim Control of GLP Costs",
+    title: "Reclaim Control of GLP Access and Costs",
     description: "Digbi's GLP Compass™ empowers employers to take back control of GLP coverage and costs with custom eligibility, prior authorization, and 24/7 virtual prescribing."
   }
 ];
