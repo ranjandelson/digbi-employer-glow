@@ -28,7 +28,8 @@ const outcomes = [
   { value: "9.7%", label: "Weight loss without drugs" },
   { value: "18%", label: "Weight loss with drugs" },
   { value: "84%", label: "GI symptom improvement" },
-  { value: "1.2%", label: "HbA1c reduction" }
+  { value: "1.2%", label: "HbA1c reduction" },
+  { value: "63%", label: "Mental health improvement" }
 ];
 
 const WhyEmployersSection = () => {
@@ -75,7 +76,7 @@ const WhyEmployersSection = () => {
           <h3 className="text-2xl lg:text-3xl font-bold text-primary-foreground text-center mb-8">
             Clinically Proven, Biology-Based Care
           </h3>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
             {outcomes.map((outcome, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl lg:text-5xl font-bold text-primary-foreground mb-2">
