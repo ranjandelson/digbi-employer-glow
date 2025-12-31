@@ -1,23 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Heart, Activity, Pill, Scale, Droplets } from "lucide-react";
 import heroImage from "@/assets/hero-image.png";
 import cdcLogo from "@/assets/cdc-partner-logo.png";
-const conditions = [{
-  icon: Scale,
-  label: "Obesity"
-}, {
-  icon: Droplets,
-  label: "Diabetes"
-}, {
-  icon: Heart,
-  label: "Digestive"
-}, {
-  icon: Activity,
-  label: "Cardio-metabolic"
-}, {
-  icon: Pill,
-  label: "Mental Health"
-}];
 const HeroSection = () => {
   return <section id="employers" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Gradient */}
@@ -50,28 +32,6 @@ const HeroSection = () => {
             animationDelay: "0.2s"
           }} className="text-muted-foreground max-w-lg animate-fade-in text-2xl">Curb healthcare costs with ONE platform for Obesity, Metabolic and GI health</p>
 
-            {/* Condition Pills */}
-            <div className="flex flex-wrap gap-3 animate-fade-in" style={{
-            animationDelay: "0.3s"
-          }}>
-              {conditions.map((condition, index) => <div key={condition.label} className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-full shadow-sm hover:shadow-md transition-shadow">
-                  <condition.icon className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium text-foreground">{condition.label}</span>
-                </div>)}
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{
-            animationDelay: "0.4s"
-          }}>
-              <Button variant="hero" size="lg">
-                Book Your Demo
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-              <Button variant="outline" size="lg">
-                See How It Works
-              </Button>
-            </div>
           </div>
 
           {/* Hero Visual */}
