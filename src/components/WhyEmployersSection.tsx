@@ -15,7 +15,7 @@ const reasons = [{
 }, {
   icon: Pill,
   title: "Reclaim Control of GLP Access and Costs",
-  description: "Digbi's GLP Compass™ empowers employers to take back control of GLP coverage and costs with custom eligibility, prior authorization, and 24/7 virtual prescribing."
+  description: "Digbi's versatile Precision Biology telehealth platform holistically tackles Obesity, Cardiometabolic, GLP-1 management, Diabetes, and GI care."
 }];
 const outcomes = [{
   value: "9.7%",
