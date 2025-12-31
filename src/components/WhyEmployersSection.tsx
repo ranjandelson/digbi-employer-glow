@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 const reasons = [{
   icon: Shield,
   title: "Financially De-risked. Verifiable Results",
-  description: "Digbi guarantees ROI, placing 100% of fees at risk for obesity, GI, and cardiometabolic care. All results are verifiable with transparent, claims-based reporting."
+  description: "Digbi guarantees ROI, placing 100% of fees at risk. All results are verifiable with transparent, claims-based reporting."
 }, {
   icon: Layers,
   title: "Consolidate 5 Point Solutions",
