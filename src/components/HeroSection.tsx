@@ -40,15 +40,13 @@ const HeroSection = () => {
             animationDelay: "0.1s"
           }}>
               Treat five conditions with{" "}
-              <span className="text-gradient">one solution</span>
+              <span className="text-gradient">Precision Biology</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl text-muted-foreground max-w-lg animate-fade-in" style={{
+            <p style={{
             animationDelay: "0.2s"
-          }}>
-              Curb healthcare costs with comprehensive precision biology care for obesity, diabetes, and cardiometabolic health.
-            </p>
+          }} className="text-muted-foreground max-w-lg animate-fade-in text-2xl">Curb healthcare costs with ONE platform for Obesity, Metabolic and GI health</p>
 
             {/* Condition Pills */}
             <div className="flex flex-wrap gap-3 animate-fade-in" style={{
