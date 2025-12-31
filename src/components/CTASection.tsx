@@ -31,13 +31,13 @@ const CTASection = () => {
           {/* Contact Options */}
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
             <a
-              href="tel:+1-800-DIGBI"
+              href="tel:+1-508-443-4424"
               className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
             >
               <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center">
                 <Phone className="w-5 h-5" />
               </div>
-              <span className="font-medium">1-800-DIGBI</span>
+              <span className="font-medium">(508)-443-4424</span>
             </a>
             <a
               href="mailto:employers@digbihealth.com"
