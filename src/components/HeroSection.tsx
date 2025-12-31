@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, Activity, Pill, Scale, Droplets } from "lucide-react";
+import heroImage from "@/assets/hero-image.png";
 const conditions = [{
   icon: Scale,
   label: "Obesity"
@@ -76,32 +77,11 @@ const HeroSection = () => {
           <div className="relative animate-fade-in" style={{
           animationDelay: "0.3s"
         }}>
-            <div className="relative aspect-square max-w-lg mx-auto">
-              {/* Main Circle */}
-              <div className="absolute inset-8 bg-gradient-hero rounded-full opacity-20 animate-pulse" />
-              <div className="absolute inset-12 bg-gradient-hero rounded-full opacity-30" />
-              <div className="absolute inset-16 bg-card rounded-full shadow-lg flex items-center justify-center border border-border">
-                <div className="text-center p-8">
-                  <div className="text-6xl font-bold text-gradient mb-2">5</div>
-                  <div className="text-lg text-muted-foreground">Conditions Covered</div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
-              {conditions.map((condition, index) => {
-              const angle = (index * 72 - 90) * (Math.PI / 180);
-              const radius = 45;
-              const x = 50 + radius * Math.cos(angle);
-              const y = 50 + radius * Math.sin(angle);
-              return <div key={condition.label} className="absolute w-14 h-14 bg-card rounded-xl shadow-card flex items-center justify-center border border-border hover:scale-110 transition-transform cursor-pointer" style={{
-                left: `${x}%`,
-                top: `${y}%`,
-                transform: "translate(-50%, -50%)"
-              }}>
-                    <condition.icon className="w-6 h-6 text-primary" />
-                  </div>;
-            })}
-            </div>
+            <img 
+              src={heroImage} 
+              alt="Diverse workforce - construction workers, office professionals, and business teams" 
+              className="w-full max-w-lg mx-auto rounded-2xl shadow-lg"
+            />
           </div>
         </div>
       </div>
