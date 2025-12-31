@@ -1,5 +1,6 @@
 import { Target, HeartPulse, TrendingDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import novoPartnershipImage from "@/assets/novo-nordisk-partnership.png";
 
 const benefits = [
   {
@@ -30,25 +31,49 @@ const GLPCompassSection = () => {
           </h2>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {benefits.map((benefit, index) => (
-            <Card key={index} className="p-6 lg:p-8 bg-card border-border hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-xl">
-                  <benefit.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </div>
+        {/* Content Grid with Image and Benefits */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          {/* Partnership Image */}
+          <div className="order-2 lg:order-1">
+            <a 
+              href="https://www.fiercebiotech.com/medtech/novo-nordisk-explore-obesity-risk-tests-digbi-health-pilot-project"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block group"
+            >
+              <div className="overflow-hidden rounded-2xl shadow-lg">
+                <img 
+                  src={novoPartnershipImage} 
+                  alt="Novo Nordisk and Digbi Health partnership - Precision biology for obesity prevention"
+                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                />
               </div>
-            </Card>
-          ))}
+              <p className="mt-4 text-sm text-muted-foreground text-center group-hover:text-primary transition-colors">
+                Read about our Novo Nordisk partnership →
+              </p>
+            </a>
+          </div>
+
+          {/* Benefits Cards */}
+          <div className="order-1 lg:order-2 flex flex-col gap-6">
+            {benefits.map((benefit, index) => (
+              <Card key={index} className="p-6 bg-card border-border hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-primary/10 rounded-xl shrink-0">
+                    <benefit.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
