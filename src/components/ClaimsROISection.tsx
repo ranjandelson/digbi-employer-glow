@@ -108,12 +108,11 @@ const ClaimsROISection = () => {
             <div className="mt-12 pt-8 border-t border-border">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Total Combined Annual Savings Potential</p>
-                  <p className="text-lg font-medium text-foreground">Per eligible member</p>
+                  <p className="text-lg font-medium text-foreground">Total Annual Savings across conditions</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-4xl lg:text-5xl font-bold text-primary">$15,480</span>
-                  <p className="text-sm text-muted-foreground mt-1">per year</p>
+                  <span className="text-4xl lg:text-5xl font-bold text-primary">-$15,480</span>
+                  <p className="text-sm text-muted-foreground mt-1">PMPY</p>
                 </div>
               </div>
             </div>
