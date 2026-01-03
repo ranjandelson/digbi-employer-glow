@@ -40,7 +40,7 @@ const WhyEmployersSection = () => {
         <div className="text-center mb-16">
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-emerald-800">Why Employers Choose Digbi Health</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">Deliver long-term, sustainable reduction in healthcare costs while addressing the root cause of obesity, digestive, metabolic, and mental health conditions.</p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">We deliver Real ROI; Not "Vibe ROI". We tackle the root cause of behavior and illness.</p>
         </div>
 
         {/* Reasons Grid */}
