@@ -1,7 +1,6 @@
 import { Shield, Layers, Rocket, Pill, HeartPulse } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import digbiHealthCollage from "@/assets/digbi-health-collage.png";
-
 const reasons = [{
   icon: Shield,
   title: "Financially De-risked.",
@@ -68,18 +67,14 @@ const WhyEmployersSection = () => {
           
           {/* Right side - GLP drugs image */}
           <div className="flex items-center justify-center">
-            <img 
-              src={digbiHealthCollage} 
-              alt="Digbi Health comprehensive care featuring doctors, app, DNA gut kit, and GLP-1 medications" 
-              className="max-w-full h-auto rounded-2xl"
-            />
+            <img src={digbiHealthCollage} alt="Digbi Health comprehensive care featuring doctors, app, DNA gut kit, and GLP-1 medications" className="max-w-full h-auto rounded-2xl" />
           </div>
         </div>
 
         {/* Clinical Outcomes */}
         <div className="bg-primary rounded-2xl p-8 lg:p-12">
           <h3 className="text-2xl lg:text-3xl font-bold text-primary-foreground text-center mb-8">
-            Clinically Proven, Biology-Based Care
+            Real clinical outcomes.  Backed by Precision Biology. 
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
             {outcomes.map((outcome, index) => <div key={index} className="text-center">
