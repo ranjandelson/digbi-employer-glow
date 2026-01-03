@@ -8,7 +8,7 @@ const SavingsCalculator = () => {
   const [coveredLives, setCoveredLives] = useState([5000]);
   
   // Calculation based on typical employer savings
-  const savingsPerMember = 2042;
+  const savingsPerMember = 3012;
   const totalSavings = coveredLives[0] * savingsPerMember * 0.15; // Assuming 15% enrollment
   const roi = 2.4;
 
