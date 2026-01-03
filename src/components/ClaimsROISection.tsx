@@ -1,15 +1,8 @@
 import { Card } from "@/components/ui/card";
-import { DollarSign, Stethoscope, Scale, Brain, TrendingDown } from "lucide-react";
+import { DollarSign, Stethoscope, Scale, Brain } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const claimsData = [
-  {
-    icon: Stethoscope,
-    label: "Digestive and GI cost reduction",
-    value: "$9,240+",
-    description: "per member per year",
-    barWidth: "100%",
-  },
   {
     icon: Scale,
     label: "Obesity-related medical cost reduction",
@@ -18,11 +11,11 @@ const claimsData = [
     barWidth: "53%",
   },
   {
-    icon: TrendingDown,
-    label: "Overall medical spend reduction",
-    value: "$3,012",
+    icon: Stethoscope,
+    label: "Digestive and GI cost reduction",
+    value: "$9,240+",
     description: "per member per year",
-    barWidth: "33%",
+    barWidth: "100%",
   },
   {
     icon: Brain,
@@ -119,7 +112,7 @@ const ClaimsROISection = () => {
                   <p className="text-lg font-medium text-foreground">Per eligible member</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-4xl lg:text-5xl font-bold text-primary">$18,492+</span>
+                  <span className="text-4xl lg:text-5xl font-bold text-primary">$15,480+</span>
                   <p className="text-sm text-muted-foreground mt-1">per year</p>
                 </div>
               </div>
