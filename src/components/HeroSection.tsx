@@ -1,5 +1,6 @@
 import heroImage from "@/assets/hero-image.png";
 import cdcLogo from "@/assets/cdc-partner-logo.png";
+import { Check } from "lucide-react";
 const HeroSection = () => {
   return <section id="employers" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Gradient */}
@@ -13,7 +14,7 @@ const HeroSection = () => {
           <div className="space-y-6 lg:space-y-8 flex flex-col justify-center">
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-full animate-fade-in w-fit">
-              <span className="w-2 h-2 bg-success rounded-full animate-pulse" />
+              <Check className="w-5 h-5 text-success" />
               <span className="font-medium text-muted-foreground text-2xl">
                 Trusted by over 100 Employers  
               </span>
