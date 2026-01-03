@@ -49,7 +49,7 @@ const ClaimsROISection = () => {
             <span className="text-green-900 text-5xl">Financially De-Risked - 9X</span> ROI
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Verified cost reductions across multiple health categories, backed by real claims data.
+            Multiple years' claims across seven U.S. self-insured employers. Peer-reviewed. Actuarially Validated.
           </p>
         </div>
 
