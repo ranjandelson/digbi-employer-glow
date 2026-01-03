@@ -1,6 +1,6 @@
 import { Shield, Layers, Rocket, Pill, HeartPulse } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import costDownCollageImage from "@/assets/cost-down-collage.png";
+import digbiHealthCollage from "@/assets/digbi-health-collage.png";
 
 const reasons = [{
   icon: Shield,
@@ -69,8 +69,8 @@ const WhyEmployersSection = () => {
           {/* Right side - GLP drugs image */}
           <div className="flex items-center justify-center">
             <img 
-              src={costDownCollageImage} 
-              alt="Digbi Health cost reduction over time with personalized care solutions" 
+              src={digbiHealthCollage} 
+              alt="Digbi Health comprehensive care featuring doctors, app, DNA gut kit, and GLP-1 medications" 
               className="max-w-full h-auto rounded-2xl"
             />
           </div>
