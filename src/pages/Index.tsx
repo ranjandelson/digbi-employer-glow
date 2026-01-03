@@ -17,8 +17,8 @@ const Index = () => {
       <HeroSection />
       <WhyEmployersSection />
       <GLPCompassSection />
-      <SavingsCalculator />
       <ClaimsROISection />
+      <SavingsCalculator />
       <OutcomesSection />
       <HowItWorksSection />
       <FAQSection />
