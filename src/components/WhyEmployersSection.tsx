@@ -2,7 +2,7 @@ import { Shield, Layers, Rocket, Pill, HeartPulse } from "lucide-react";
 import { Card } from "@/components/ui/card";
 const reasons = [{
   icon: Shield,
-  title: "Financially De-risked. Verifiable Results",
+  title: "Financially De-risked.",
   description: "Digbi guarantees ROI, placing 100% of fees at risk. All results are verifiable with transparent, claims-based reporting."
 }, {
   icon: Layers,
