@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 const claimsData = [
   {
     icon: Scale,
-    label: "Obesity-related medical cost reduction",
+    label: "Obesity and GLP related cost reduction",
     value: "$4,884",
     description: "per member per year",
     barWidth: "53%",
