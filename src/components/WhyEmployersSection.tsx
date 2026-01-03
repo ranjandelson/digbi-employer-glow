@@ -1,5 +1,7 @@
 import { Shield, Layers, Rocket, Pill, HeartPulse } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import glpDrugsImage from "@/assets/glp-drugs.png";
+
 const reasons = [{
   icon: Shield,
   title: "Financially De-risked.",
@@ -43,23 +45,35 @@ const WhyEmployersSection = () => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">We deliver Real ROI; Not "Vibe ROI". We tackle the root cause of behavior and illness.</p>
         </div>
 
-        {/* Reasons Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-16">
-          {reasons.map((reason, index) => <Card key={index} className="p-6 lg:p-8 bg-card border-border hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-xl shrink-0">
-                  <reason.icon className="w-6 h-6 text-primary" />
+        {/* Reasons Grid with Image */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">
+          {/* Left side - Reason cards */}
+          <div className="grid gap-6">
+            {reasons.map((reason, index) => <Card key={index} className="p-6 bg-card border-border hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-primary/10 rounded-xl shrink-0">
+                    <reason.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">
+                      {reason.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      {reason.description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    {reason.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {reason.description}
-                  </p>
-                </div>
-              </div>
-            </Card>)}
+              </Card>)}
+          </div>
+          
+          {/* Right side - GLP drugs image */}
+          <div className="flex items-center justify-center">
+            <img 
+              src={glpDrugsImage} 
+              alt="GLP-1 medications including Saxenda, Wegovy, Ozempic, and Zepbound" 
+              className="max-w-full h-auto rounded-2xl"
+            />
+          </div>
         </div>
 
         {/* Clinical Outcomes */}
