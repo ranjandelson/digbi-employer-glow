@@ -43,7 +43,7 @@ const ClaimsROISection = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
             <DollarSign className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">100% Fees At Risk</span>
+            <span className="text-sm font-medium text-primary">100% Fees-At-Risk</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-emerald-900">
             <span className="text-green-900 text-5xl">Financially De-Risked - 9X</span> ROI
