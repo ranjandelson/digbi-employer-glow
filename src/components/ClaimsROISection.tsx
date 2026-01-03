@@ -96,6 +96,16 @@ const ClaimsROISection = () => {
                   <p className="text-sm text-muted-foreground mt-1">PMPY</p>
                 </div>
               </div>
+              <div className="mt-4">
+                <a 
+                  href="https://www.mdpi.com/2227-9032/13/23/3147" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:underline"
+                >
+                  Source: Economic Impact of a Precision Biology Care on Employer Health Costs: A Multi-Employer and Multi-Year Claims Analysis
+                </a>
+              </div>
             </div>
           </Card>
         </div>
