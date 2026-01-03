@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { DollarSign, Stethoscope, Scale, Brain, TrendingDown } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const claimsData = [
   {
@@ -33,8 +34,29 @@ const claimsData = [
 ];
 
 const ClaimsROISection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="claims-roi" className="py-20 lg:py-32 bg-gradient-stats">
+    <section id="claims-roi" ref={sectionRef} className="py-20 lg:py-32 bg-gradient-stats">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -78,7 +100,10 @@ const ClaimsROISection = () => {
                     <div className="h-3 bg-muted rounded-full overflow-hidden">
                       <div 
                         className="h-full bg-gradient-to-r from-primary to-success rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: item.barWidth }}
+                        style={{ 
+                          width: isVisible ? item.barWidth : "0%",
+                          transitionDelay: `${index * 200}ms`
+                        }}
                       />
                     </div>
                   </div>
