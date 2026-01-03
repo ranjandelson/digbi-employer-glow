@@ -3,7 +3,7 @@ import { Scale, Heart, Activity, TrendingDown, Award } from "lucide-react";
 
 const outcomes = [
   {
-    value: "9.3",
+    value: "7",
     unit: "%",
     label: "Weight reduction",
     sublabel: "Without GLP-1s over 12 months",
