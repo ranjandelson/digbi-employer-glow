@@ -3,25 +3,21 @@ import { Slider } from "@/components/ui/slider";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calculator, DollarSign, Users, TrendingUp } from "lucide-react";
-
 const SavingsCalculator = () => {
   const [coveredLives, setCoveredLives] = useState([5000]);
-  
+
   // Calculation based on typical employer savings
   const savingsPerMember = 3012;
   const totalSavings = coveredLives[0] * savingsPerMember * 0.15; // Assuming 15% enrollment
   const roi = 2.4;
-
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
-      maximumFractionDigits: 0,
+      maximumFractionDigits: 0
     }).format(value);
   };
-
-  return (
-    <section className="py-20 lg:py-32 bg-gradient-stats">
+  return <section className="py-20 lg:py-32 bg-gradient-stats">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
@@ -34,7 +30,7 @@ const SavingsCalculator = () => {
               Find out how much you could save
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our model accounts for members with diabetes, obesity, hypertension, and hyperlipidemia based on the lives covered by your organization.
+              Our model accounts for members with obesity, diabetes, GI, mental health, hypertension, and hyperlipidemia based on the lives covered by your organization.
             </p>
           </div>
 
@@ -52,14 +48,7 @@ const SavingsCalculator = () => {
                     {coveredLives[0].toLocaleString()}
                   </span>
                 </div>
-                <Slider
-                  value={coveredLives}
-                  onValueChange={setCoveredLives}
-                  min={1000}
-                  max={50000}
-                  step={500}
-                  className="w-full"
-                />
+                <Slider value={coveredLives} onValueChange={setCoveredLives} min={1000} max={50000} step={500} className="w-full" />
                 <div className="flex justify-between text-sm text-muted-foreground">
                   <span>1,000</span>
                   <span>50,000</span>
@@ -105,8 +94,6 @@ const SavingsCalculator = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SavingsCalculator;
