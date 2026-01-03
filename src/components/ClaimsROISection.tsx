@@ -15,7 +15,7 @@ const claimsData = [{
   barWidth: "100%"
 }, {
   icon: Brain,
-  label: "Anxiety-related medical cost reduction",
+  label: "Anxiety-related cost reduction",
   value: "$1,356",
   description: "per member per year",
   barWidth: "15%"
