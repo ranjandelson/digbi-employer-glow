@@ -6,21 +6,21 @@ const claimsData = [
   {
     icon: Scale,
     label: "Obesity-related medical cost reduction",
-    value: "$4,884+",
+    value: "$4,884",
     description: "per member per year",
     barWidth: "53%",
   },
   {
     icon: Stethoscope,
     label: "Digestive and GI cost reduction",
-    value: "$9,240+",
+    value: "$9,240",
     description: "per member per year",
     barWidth: "100%",
   },
   {
     icon: Brain,
     label: "Anxiety-related medical cost reduction",
-    value: "$1,356+",
+    value: "$1,356",
     description: "per member per year",
     barWidth: "15%",
   },
@@ -112,7 +112,7 @@ const ClaimsROISection = () => {
                   <p className="text-lg font-medium text-foreground">Per eligible member</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-4xl lg:text-5xl font-bold text-primary">$15,480+</span>
+                  <span className="text-4xl lg:text-5xl font-bold text-primary">$15,480</span>
                   <p className="text-sm text-muted-foreground mt-1">per year</p>
                 </div>
               </div>
