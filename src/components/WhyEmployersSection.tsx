@@ -1,6 +1,6 @@
 import { Shield, Layers, Rocket, Pill, HeartPulse } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import glpDrugsImage from "@/assets/glp-drugs.png";
+import costDownCollageImage from "@/assets/cost-down-collage.png";
 
 const reasons = [{
   icon: Shield,
@@ -69,8 +69,8 @@ const WhyEmployersSection = () => {
           {/* Right side - GLP drugs image */}
           <div className="flex items-center justify-center">
             <img 
-              src={glpDrugsImage} 
-              alt="GLP-1 medications including Saxenda, Wegovy, Ozempic, and Zepbound" 
+              src={costDownCollageImage} 
+              alt="Digbi Health cost reduction over time with personalized care solutions" 
               className="max-w-full h-auto rounded-2xl"
             />
           </div>
