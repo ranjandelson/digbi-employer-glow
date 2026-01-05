@@ -1,93 +1,109 @@
-import { Shield, Layers, Rocket, Pill, HeartPulse } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import digbiHealthCollage from "@/assets/digbi-health-collage.png";
-const reasons = [{
-  icon: Shield,
-  title: "Financially De-risked.",
-  description: "Digbi guarantees ROI, placing 100% of fees at risk. All results are verifiable with transparent, claims-based reporting."
-}, {
-  icon: Layers,
-  title: "Consolidate 5 Point Solutions",
-  description: "Digbi's versatile Precision Biology platform can replace existing point solutions for weight and GLP-1 medication management, cardiometabolic care, diabetes management, and digestive care, or offer a best-in-class point solution to enhance your existing offerings."
-}, {
-  icon: Rocket,
-  title: "Simple to Launch & Manage",
-  description: "Implementation is low-lift for employers and health plans, featuring simple contracting, minimal data exchange, and turnkey claims billing."
-}, {
-  icon: Pill,
-  title: "Reclaim Control of GLP Access and Costs",
-  description: "GLP Compass offers the right care - lifestyle and medication - based on Precision Biology PLUS fulfillment through PBM, employee cash pay, employer direct pay or 340B."
-}];
-const outcomes = [{
-  value: "9.7%",
-  label: "Weight loss without drugs"
-}, {
-  value: "18%",
-  label: "Weight loss with drugs"
-}, {
-  value: "84%",
-  label: "GI symptom improvement"
-}, {
-  value: "1.2%",
-  label: "HbA1c reduction"
-}, {
-  value: "63%",
-  label: "Mental health improvement"
-}];
+import { Shield, Layers, Rocket, Pill, Users, Heart, TrendingDown, Brain } from "lucide-react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { useState } from "react";
+import { Minus, Plus } from "lucide-react";
+
+const benefits = [
+  {
+    icon: Users,
+    title: "Engaged employees",
+    description: "Our Precision Biology approach makes it easy for employees to get started and stay engaged: personalized care based on their unique genetics, gut microbiome, and lifestyle factors.",
+  },
+  {
+    icon: Heart,
+    title: "Improved health",
+    description: "Early intervention helps prevent costly chronic conditions: members see significant improvements in weight, blood sugar, digestive health, and mental wellness.",
+  },
+  {
+    icon: TrendingDown,
+    title: "Lower costs",
+    description: "Better health outcomes translate to real savings: verified ROI with transparent, claims-based reporting. 100% of fees at risk guarantees results.",
+  },
+  {
+    icon: Brain,
+    title: "Root cause treatment",
+    description: "We tackle the root cause of behavior and illness, not just symptoms. Precision Biology drives lasting behavior change and sustainable outcomes.",
+  },
+];
+
 const WhyEmployersSection = () => {
-  return <section className="py-20 lg:py-32 bg-secondary/30">
+  const [openItem, setOpenItem] = useState<number | null>(0);
+
+  return (
+    <section className="py-20 lg:py-32 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-emerald-800">Why Employers Choose Digbi Health</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">We deliver Real ROI; Not "Vibe ROI". We tackle the root cause of behavior and illness.</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
+            A care model that works—for your employees and your bottom line.
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Digbi Health combines our science-backed Precision Biology platform with personalized medication management to improve health outcomes and maximize the value of your healthcare spend.
+          </p>
         </div>
 
-        {/* Reasons Grid with Image */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">
-          {/* Left side - Reason cards */}
-          <div className="grid gap-6">
-            {reasons.map((reason, index) => <Card key={index} className="p-6 bg-card border-border hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-xl shrink-0">
-                    <reason.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">
-                      {reason.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {reason.description}
-                    </p>
-                  </div>
-                </div>
-              </Card>)}
+        {/* Two Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left side - Big stat */}
+          <div className="flex flex-col items-center lg:items-start justify-center lg:sticky lg:top-24">
+            <p className="text-muted-foreground mb-2 text-lg">Real ROI, not "Vibe ROI"</p>
+            <div className="flex items-baseline gap-1">
+              <span className="text-8xl lg:text-9xl font-bold text-primary">100</span>
+              <span className="text-5xl lg:text-6xl font-bold text-primary">%</span>
+            </div>
+            <p className="text-2xl lg:text-3xl font-semibold text-foreground mt-2">
+              fees at risk
+            </p>
+            <p className="text-muted-foreground mt-4 text-center lg:text-left max-w-md">
+              We guarantee ROI with verifiable, claims-based reporting. If we don't deliver, you don't pay.
+            </p>
           </div>
-          
-          {/* Right side - GLP drugs image */}
-          <div className="flex items-center justify-center">
-            <img src={digbiHealthCollage} alt="Digbi Health comprehensive care featuring doctors, app, DNA gut kit, and GLP-1 medications" className="max-w-full h-auto rounded-2xl" />
-          </div>
-        </div>
 
-        {/* Clinical Outcomes */}
-        <div className="bg-primary rounded-2xl p-8 lg:p-12">
-          <h3 className="text-2xl lg:text-3xl font-bold text-primary-foreground text-center mb-8">
-            Real clinical outcomes.  Backed by Precision Biology. 
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
-            {outcomes.map((outcome, index) => <div key={index} className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-primary-foreground mb-2">
-                  {outcome.value}
+          {/* Right side - Collapsible cards */}
+          <div className="space-y-4">
+            {benefits.map((benefit, index) => (
+              <Collapsible
+                key={index}
+                open={openItem === index}
+                onOpenChange={(open) => setOpenItem(open ? index : null)}
+              >
+                <div className="border border-border rounded-xl bg-card overflow-hidden">
+                  <CollapsibleTrigger className="w-full p-6 flex items-center justify-between text-left hover:bg-muted/50 transition-colors">
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 bg-primary/10 rounded-xl shrink-0">
+                        <benefit.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-foreground">
+                        {benefit.title}
+                      </h3>
+                    </div>
+                    <div className="shrink-0 ml-4">
+                      {openItem === index ? (
+                        <Minus className="w-5 h-5 text-primary" />
+                      ) : (
+                        <Plus className="w-5 h-5 text-muted-foreground" />
+                      )}
+                    </div>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <div className="px-6 pb-6 pt-0">
+                      <p className="text-muted-foreground pl-16">
+                        {benefit.description}
+                      </p>
+                    </div>
+                  </CollapsibleContent>
                 </div>
-                <div className="text-sm lg:text-base text-primary-foreground/80">
-                  {outcome.label}
-                </div>
-              </div>)}
+              </Collapsible>
+            ))}
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default WhyEmployersSection;
