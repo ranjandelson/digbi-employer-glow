@@ -16,7 +16,7 @@ const reasons = [{
 }, {
   icon: Pill,
   title: "Reclaim Control of GLP Access and Costs",
-  description: "GLP Compass offers the right care - lifestyle and medication - based on Precision Biology and fulfillment through PBM, employee cash pay, employer direct pay or 340B."
+  description: "GLP Compass offers the right care - lifestyle and medication - based on Precision Biology PLUS fulfillment through PBM, employee cash pay, employer direct pay or 340B."
 }];
 const outcomes = [{
   value: "9.7%",
