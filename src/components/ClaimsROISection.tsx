@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { DollarSign, Stethoscope, Scale, Brain } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 const claimsData = [{
@@ -91,6 +92,11 @@ const ClaimsROISection = () => {
                   <span className="text-4xl font-bold text-primary lg:text-3xl">-$15,480</span>
                   <p className="text-sm text-muted-foreground mt-1">PMPY</p>
                 </div>
+              </div>
+              <div className="mt-6 flex justify-center">
+                <Button size="lg" className="text-lg px-8">
+                  Get your personalized Analysis
+                </Button>
               </div>
               <div className="mt-4">
                 <a href="https://www.mdpi.com/2227-9032/13/23/3147" target="_blank" rel="noopener noreferrer" className="hover:underline text-xs text-zinc-700">
