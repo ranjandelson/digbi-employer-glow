@@ -16,7 +16,7 @@ const reasons = [{
 }, {
   icon: Pill,
   title: "Reclaim Control of GLP Access and Costs",
-  description: "Digbi's versatile Precision Biology telehealth platform holistically tackles Obesity, Cardiometabolic, GLP-1 management, Diabetes, and GI care."
+  description: "GLP Compass offers the right care - lifestyle and medication - based on Precision Biology and fulfillment through PBM, employee cash pay, employer direct pay or 340B."
 }];
 const outcomes = [{
   value: "9.7%",
