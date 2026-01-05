@@ -1,7 +1,6 @@
 import { Shield, Layers, Rocket, Pill } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import digbiHealthCollage from "@/assets/digbi-health-collage.png";
-
 const reasons = [{
   id: "financially-derisked",
   icon: Shield,
@@ -45,7 +44,7 @@ const WhyEmployersSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-emerald-800">Why Employers Choose Digbi Health</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-[#1a0d26]">Why Employers Choose Digbi Health</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">We deliver Real ROI; Not "Vibe ROI". We tackle the root cause of behavior and illness.</p>
         </div>
 
@@ -53,8 +52,7 @@ const WhyEmployersSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">
           {/* Left side - Collapsible Reason cards */}
           <Accordion type="single" collapsible defaultValue="financially-derisked" className="space-y-4">
-            {reasons.map((reason) => (
-              <AccordionItem key={reason.id} value={reason.id} className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-lg transition-shadow">
+            {reasons.map(reason => <AccordionItem key={reason.id} value={reason.id} className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-lg transition-shadow">
                 <AccordionTrigger className="hover:no-underline py-6">
                   <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary/10 rounded-xl shrink-0">
@@ -70,8 +68,7 @@ const WhyEmployersSection = () => {
                     {reason.description}
                   </p>
                 </AccordionContent>
-              </AccordionItem>
-            ))}
+              </AccordionItem>)}
           </Accordion>
           
           {/* Right side - GLP drugs image */}
