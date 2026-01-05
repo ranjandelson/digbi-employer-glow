@@ -1,11 +1,6 @@
-import { Shield, Layers, Rocket, Pill } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import kitsCgmCouple from "@/assets/kits-cgm-couple.png";
+import { Shield, Layers, Rocket, Pill, HeartPulse } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import digbiHealthCollage from "@/assets/digbi-health-collage.png";
 const reasons = [{
   icon: Shield,
   title: "Financially De-risked.",
@@ -52,35 +47,27 @@ const WhyEmployersSection = () => {
         {/* Reasons Grid with Image */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">
           {/* Left side - Reason cards */}
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {reasons.map((reason, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-lg transition-shadow"
-              >
-                <AccordionTrigger className="hover:no-underline py-4">
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="p-3 bg-primary/10 rounded-xl shrink-0">
-                      <reason.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground">
+          <div className="grid gap-6">
+            {reasons.map((reason, index) => <Card key={index} className="p-6 bg-card border-border hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-primary/10 rounded-xl shrink-0">
+                    <reason.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">
                       {reason.title}
                     </h3>
+                    <p className="text-muted-foreground text-sm">
+                      {reason.description}
+                    </p>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 pl-[4.5rem]">
-                  <p className="text-muted-foreground text-sm">
-                    {reason.description}
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+                </div>
+              </Card>)}
+          </div>
           
-          {/* Right side - Updated image */}
+          {/* Right side - GLP drugs image */}
           <div className="flex items-center justify-center">
-            <img src={kitsCgmCouple} alt="Couple with Gut Biome and DNA Test Kit and CGM sensors" className="max-w-full h-auto rounded-2xl" />
+            <img src={digbiHealthCollage} alt="Digbi Health comprehensive care featuring doctors, app, DNA gut kit, and GLP-1 medications" className="max-w-full h-auto rounded-2xl" />
           </div>
         </div>
 
