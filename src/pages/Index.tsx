@@ -4,7 +4,7 @@ import WhyEmployersSection from "@/components/WhyEmployersSection";
 import GLPCompassSection from "@/components/GLPCompassSection";
 
 import ClaimsROISection from "@/components/ClaimsROISection";
-import HowItWorksSection from "@/components/HowItWorksSection";
+import CustomerJourneySection from "@/components/CustomerJourneySection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -17,7 +17,7 @@ const Index = () => {
       <WhyEmployersSection />
       <GLPCompassSection />
       <ClaimsROISection />
-      <HowItWorksSection />
+      <CustomerJourneySection />
       <FAQSection />
       <CTASection />
       <Footer />
