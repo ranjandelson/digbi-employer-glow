@@ -42,8 +42,8 @@ const ClaimsROISection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-emerald-900">
-            <span className="text-green-900 text-5xl">Financially De-Risked - 9X</span> ROI
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-[#4f1dcd]">
+            <span className="text-5xl text-[#4f1dcd]">Financially De-Risked - 9X</span> ROI
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Multiple years' claims across seven U.S. self-insured employers. Peer-reviewed. Actuarially Validated.</p>
         </div>
@@ -99,7 +99,7 @@ const ClaimsROISection = () => {
                 </Button>
               </div>
               <div className="mt-4">
-                <a href="https://www.mdpi.com/2227-9032/13/23/3147" target="_blank" rel="noopener noreferrer" className="hover:underline text-xs text-zinc-700">
+                <a href="https://www.mdpi.com/2227-9032/13/23/3147" target="_blank" rel="noopener noreferrer" className="hover:underline text-xs text-zinc-700 text-justify">
                   Source: Economic Impact of a Precision Biology Care on Employer Health Costs: A Multi-Employer and Multi-Year Claims Analysis
                 </a>
               </div>
