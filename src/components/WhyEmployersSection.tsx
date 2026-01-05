@@ -1,19 +1,24 @@
-import { Shield, Layers, Rocket, Pill, HeartPulse } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Shield, Layers, Rocket, Pill } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import digbiHealthCollage from "@/assets/digbi-health-collage.png";
+
 const reasons = [{
+  id: "financially-derisked",
   icon: Shield,
   title: "Financially De-risked.",
   description: "Digbi guarantees ROI, placing 100% of fees at risk. All results are verifiable with transparent, claims-based reporting."
 }, {
+  id: "consolidate-solutions",
   icon: Layers,
   title: "Consolidate 5 Point Solutions",
   description: "Digbi's versatile Precision Biology platform can replace existing point solutions for weight and GLP-1 medication management, cardiometabolic care, diabetes management, and digestive care, or offer a best-in-class point solution to enhance your existing offerings."
 }, {
+  id: "simple-launch",
   icon: Rocket,
   title: "Simple to Launch & Manage",
   description: "Implementation is low-lift for employers and health plans, featuring simple contracting, minimal data exchange, and turnkey claims billing."
 }, {
+  id: "glp-control",
   icon: Pill,
   title: "Reclaim Control of GLP Access and Costs",
   description: "GLP Compass offers the right care - lifestyle and medication - based on Precision Biology PLUS fulfillment through PBM, employee cash pay, employer direct pay or 340B."
@@ -46,24 +51,28 @@ const WhyEmployersSection = () => {
 
         {/* Reasons Grid with Image */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">
-          {/* Left side - Reason cards */}
-          <div className="grid gap-6">
-            {reasons.map((reason, index) => <Card key={index} className="p-6 bg-card border-border hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-xl shrink-0">
-                    <reason.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">
+          {/* Left side - Collapsible Reason cards */}
+          <Accordion type="single" collapsible defaultValue="financially-derisked" className="space-y-4">
+            {reasons.map((reason) => (
+              <AccordionItem key={reason.id} value={reason.id} className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-lg transition-shadow">
+                <AccordionTrigger className="hover:no-underline py-6">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-primary/10 rounded-xl shrink-0">
+                      <reason.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground text-left">
                       {reason.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {reason.description}
-                    </p>
                   </div>
-                </div>
-              </Card>)}
-          </div>
+                </AccordionTrigger>
+                <AccordionContent className="pl-16 pb-6">
+                  <p className="text-muted-foreground text-sm">
+                    {reason.description}
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
           
           {/* Right side - GLP drugs image */}
           <div className="flex items-center justify-center">
