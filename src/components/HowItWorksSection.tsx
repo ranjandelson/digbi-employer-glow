@@ -32,7 +32,7 @@ const HowItWorksSection = () => {
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">How Digbi Health  works for Employers</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get started quickly with our streamlined implementation process designed for busy HR teams.
+            Get started quickly with our streamlined implementation process designed for busy HR and IT teams.
           </p>
         </div>
 
