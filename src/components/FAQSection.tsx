@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { HelpCircle, ArrowRight } from "lucide-react";
 const faqs = [{
   question: "How is Digbi Health different from other wellness or point solutions?",
-  answer: "Most wellness or point solutions focus on a single condition or a narrow approach. Digbi Health is designed to be more holistic. We deliver integrated, multispecialty care across all cardiometabolic conditions—at one transparent price point. Our team of specialists works together to support each member's long-term health through personalized care based on their unique gut microbiome, genetics, and blood markers."
+  answer: "Most point solutions focus on a single condition or a narrow approach. Digbi Health is designed to be more holistic. We are the first integrated, multispecialty care across all cardiometabolic and GI conditions—at one transparent price point. Our team of specialists works together to support each member's long-term health through personalized care based on their unique biology"
 }, {
   question: "What conditions does Digbi Health cover?",
   answer: "Digbi Health supports the full spectrum of cardiometabolic conditions: Type 2 Diabetes, Prediabetes, Obesity/Weight Management, Hypertension, Dyslipidemia (high cholesterol), and digestive disorders—with more conditions being added regularly."
