@@ -8,7 +8,7 @@ const steps = [{
 }, {
   step: 2,
   title: "Receive a personalized care plan",
-  description: "With medications when needed, nutrition plans, exercise routines, and more.",
+  description: "Includes at home tests, devices, medications when needed, AI meal rating, personalized recipes and exercise routines.",
   icon: HeartPulse,
   image: "https://join9am.com/hubfs/HowIt-2-UI.png"
 }, {
