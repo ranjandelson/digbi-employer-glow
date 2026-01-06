@@ -1,10 +1,12 @@
 import { ClipboardList, HeartPulse, Pill, Users } from "lucide-react";
+import clinicalEvaluationImg from "@/assets/clinical-evaluation.png";
+
 const steps = [{
   step: 1,
   title: "Clinical and lifestyle evaluation",
   description: "To help us create a care plan that meets your needs.",
   icon: ClipboardList,
-  image: "https://join9am.com/hubfs/HowIt-1-UI.png"
+  image: clinicalEvaluationImg
 }, {
   step: 2,
   title: "Receive a personalized care plan",
