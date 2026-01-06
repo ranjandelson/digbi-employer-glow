@@ -6,7 +6,7 @@ const faqs = [{
   answer: "Most point solutions focus on a single condition or a narrow approach. Digbi Health is designed to be more holistic. We are the first integrated, multispecialty care across all cardiometabolic and GI conditions—at one transparent price point. Our team of specialists works together to support each member's long-term health through personalized care based on their unique biology"
 }, {
   question: "What conditions does Digbi Health cover?",
-  answer: "Digbi Health supports the full spectrum of cardiometabolic conditions: Type 2 Diabetes, Prediabetes, Obesity/Weight Management, Hypertension, Dyslipidemia (high cholesterol), and digestive disorders—with more conditions being added regularly."
+  answer: "Digbi Health supports the full spectrum of cardiometabolic conditions: Type 2 Diabetes, Prediabetes, Obesity/Weight Management, PCOS, Hypertension, high cholesterol, and Digestive disorders."
 }, {
   question: "Does Digbi Health prescribe GLP-1s?",
   answer: "Yes—but only when clinically appropriate. Unlike other vendors that may default to expensive medications, we follow a precision biology approach: using gut microbiome and genetic testing to determine the best intervention for each individual. For eligible members, medications are prescribed with built-in engagement requirements, ensuring the right therapy at the right time."
