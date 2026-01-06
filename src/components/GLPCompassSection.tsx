@@ -23,7 +23,7 @@ const GLPCompassSection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-lime-900">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-[#1a0d26]">
             Why Employers Choose GLP Compass™
           </h2>
         </div>
