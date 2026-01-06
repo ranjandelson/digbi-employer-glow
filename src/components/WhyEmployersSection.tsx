@@ -1,6 +1,6 @@
 import { Shield, Layers, Rocket, Pill } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import digbiHealthCollage from "@/assets/digbi-health-collage.png";
+import whyEmployersImage from "@/assets/why-employers-image.webp";
 const reasons = [{
   id: "financially-derisked",
   icon: Shield,
@@ -73,7 +73,7 @@ const WhyEmployersSection = () => {
           
           {/* Right side - GLP drugs image */}
           <div className="flex items-center justify-center">
-            <img src={digbiHealthCollage} alt="Digbi Health comprehensive care featuring doctors, app, DNA gut kit, and GLP-1 medications" className="max-w-full h-auto rounded-2xl" />
+            <img src={whyEmployersImage} alt="Doctor consulting with patients about Gut Biome and DNA Test Kit" className="max-w-full h-auto rounded-2xl" />
           </div>
         </div>
 
