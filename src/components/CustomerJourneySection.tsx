@@ -1,8 +1,10 @@
 import { ClipboardList, HeartPulse, Pill, Users } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import clinicalEvaluationImg from "@/assets/clinical-evaluation.png";
 import carePlanImg from "@/assets/care-plan.png";
 import prescriptionsImg from "@/assets/prescriptions-approved.png";
 import expertSupportImg from "@/assets/expert-support.png";
+
 const steps = [{
   step: 1,
   title: "Clinical and lifestyle evaluation",
@@ -28,48 +30,138 @@ const steps = [{
   icon: Users,
   image: expertSupportImg
 }];
+
 const CustomerJourneySection = () => {
-  return <section id="how-it-works" className="py-20 lg:py-32 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-24">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-4 block">
-            How it works
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            Simplifying Whole Person Health   
-          </h2>
-        </div>
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [activeStep, setActiveStep] = useState(0);
 
-        {/* Steps */}
-        <div className="max-w-6xl mx-auto space-y-12 lg:space-y-16">
-          {steps.map((step, index) => <div key={step.step} className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-10 lg:gap-16`}>
-              {/* Text Content */}
-              <div className="flex-1 text-center lg:text-left">
-                {/* Step Number */}
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-lg mb-6">
-                  {step.step}
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      
+      const section = sectionRef.current;
+      const rect = section.getBoundingClientRect();
+      const sectionHeight = section.offsetHeight;
+      const viewportHeight = window.innerHeight;
+      
+      // Calculate scroll progress within the section
+      const scrollStart = rect.top;
+      const scrollableDistance = sectionHeight - viewportHeight;
+      
+      if (scrollStart <= 0 && scrollStart >= -scrollableDistance) {
+        const progress = Math.abs(scrollStart) / scrollableDistance;
+        const stepIndex = Math.min(Math.floor(progress * steps.length), steps.length - 1);
+        setActiveStep(stepIndex);
+      } else if (scrollStart > 0) {
+        setActiveStep(0);
+      } else {
+        setActiveStep(steps.length - 1);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <section 
+      id="how-it-works" 
+      ref={sectionRef}
+      className="relative bg-background"
+      style={{ height: `${100 + steps.length * 100}vh` }}
+    >
+      {/* Sticky Container */}
+      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+        <div className="container mx-auto px-4 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-4 block">
+              How it works
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+              Simplifying Whole Person Health   
+            </h2>
+          </div>
+
+          {/* Content Area */}
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 max-w-4xl mx-auto">
+            {/* Text Content */}
+            <div className="flex-1 text-center lg:text-left max-w-md">
+              {steps.map((step, index) => (
+                <div
+                  key={step.step}
+                  className={`absolute transition-all duration-500 ease-out ${
+                    index === activeStep 
+                      ? "opacity-100 translate-y-0" 
+                      : index < activeStep 
+                        ? "opacity-0 -translate-y-8" 
+                        : "opacity-0 translate-y-8"
+                  }`}
+                  style={{ 
+                    position: index === activeStep ? 'relative' : 'absolute',
+                    pointerEvents: index === activeStep ? 'auto' : 'none'
+                  }}
+                >
+                  {/* Step Number */}
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-lg mb-6">
+                    {step.step}
+                  </div>
+                  
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                    {step.title}
+                  </h3>
+                  <p className="text-lg text-muted-foreground">
+                    {step.description}
+                  </p>
                 </div>
+              ))}
+            </div>
+
+            {/* Image */}
+            <div className="flex-1 flex items-center justify-center max-w-[220px]">
+              <div className="relative flex items-center justify-center">
+                {/* Circle Background */}
+                <div className="absolute w-[240px] h-[240px] rounded-full bg-primary/10" />
                 
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-lg text-muted-foreground max-w-md mx-auto lg:mx-0">
-                  {step.description}
-                </p>
+                {/* Images with transition */}
+                {steps.map((step, index) => (
+                  <img
+                    key={step.step}
+                    src={step.image}
+                    alt={step.title}
+                    className={`absolute z-10 w-full h-auto rounded-2xl shadow-lg transition-all duration-500 ease-out ${
+                      index === activeStep 
+                        ? "opacity-100 scale-100" 
+                        : "opacity-0 scale-95"
+                    }`}
+                  />
+                ))}
+                {/* Placeholder to maintain size */}
+                <img
+                  src={steps[0].image}
+                  alt=""
+                  className="invisible w-full h-auto"
+                />
               </div>
+            </div>
+          </div>
 
-              {/* Image */}
-              <div className="flex-1 w-full max-w-[280px] lg:max-w-[320px] mx-auto lg:mx-0">
-                <div className="relative flex items-center justify-center">
-                  {/* Circle Background */}
-                  <div className="absolute w-[300px] h-[300px] lg:w-[340px] lg:h-[340px] rounded-full bg-primary/10" />
-                  <img src={step.image} alt={step.title} className="relative z-10 w-full h-auto rounded-2xl shadow-lg" />
-                </div>
-              </div>
-            </div>)}
+          {/* Step Indicators */}
+          <div className="flex justify-center gap-2 mt-12">
+            {steps.map((_, index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === activeStep ? "bg-primary w-8" : "bg-primary/30"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default CustomerJourneySection;
