@@ -1,4 +1,4 @@
-import { Target, HeartPulse, TrendingDown } from "lucide-react";
+import { Target, HeartPulse, TrendingDown, Settings2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import novoPartnershipImage from "@/assets/novo-nordisk-partnership.png";
 
@@ -17,6 +17,11 @@ const benefits = [
     icon: TrendingDown,
     title: "Prevent Rebound and Repeat Drug Costs",
     description: "When employees need or want to stop GLPs, Digbi guides them off safely using gut microbiome, genetics, and glucose data—maintaining weight loss and preventing rebound that drives re-initiation, higher claims, and long-term dependency."
+  },
+  {
+    icon: Settings2,
+    title: "Flexible Access and Seamless Integration",
+    description: "A customizable solution integrates with PBM, carriers, and offers medication access via PBM, as well as direct employer subsidies or employee cash pay."
   }
 ];
 
