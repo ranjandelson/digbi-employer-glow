@@ -62,7 +62,7 @@ const CustomerJourneySection = () => {
               {/* Image */}
               <div className="flex-1 w-full max-w-md lg:max-w-none">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent transform rotate-3 scale-105 rounded-none shadow-none" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent transform rotate-3 scale-105 rounded-none shadow-none border-black/0" />
                   <img src={step.image} alt={step.title} className="relative w-full h-auto rounded-2xl shadow-lg" />
                 </div>
               </div>
