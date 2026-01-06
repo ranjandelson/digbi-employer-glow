@@ -40,8 +40,18 @@ const HeroSection = () => {
           animationDelay: "0.3s"
         }}>
             <img src={heroImage} alt="Diverse workforce - construction workers, office professionals, and business teams" className="w-full max-w-md lg:max-w-lg rounded-2xl shadow-lg" />
-            <div className="flex justify-center mt-6">
-              <img src={cdcLogo} alt="CDC Full Plus Partner" className="h-14 lg:h-16 w-auto" />
+            <div className="flex flex-wrap justify-center items-center gap-4 mt-6">
+              <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-3 py-2 rounded-lg border border-border/50">
+                <img src={cdcLogo} alt="CDC Full Plus Partner" className="h-10 lg:h-12 w-auto" />
+              </div>
+              <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-border/50">
+                <span className="text-sm lg:text-base font-semibold text-foreground">Shortlister</span>
+                <span className="text-xs lg:text-sm text-muted-foreground">Top Vendor</span>
+              </div>
+              <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-border/50">
+                <span className="text-sm lg:text-base font-semibold text-foreground">Forbes</span>
+                <span className="text-xs lg:text-sm text-muted-foreground">America's Top Startup Employers</span>
+              </div>
             </div>
           </div>
         </div>
