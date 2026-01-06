@@ -1,7 +1,7 @@
 import { ClipboardList, HeartPulse, Pill, Users } from "lucide-react";
 const steps = [{
   step: 1,
-  title: "Complete a whole health evaluation",
+  title: "Clinical and lifestyle evaluation",
   description: "To help us create a care plan that meets your needs.",
   icon: ClipboardList,
   image: "https://join9am.com/hubfs/HowIt-1-UI.png"
