@@ -34,7 +34,7 @@ const FAQSection = () => {
               Got questions? We've got answers.
             </h2>
             <p className="text-lg text-muted-foreground">
-              Got questions? We've got answers.
+              Answers to common questions from members.
             </p>
           </div>
 
