@@ -130,7 +130,7 @@ const CustomerJourneySection = () => {
                     key={step.step}
                     src={step.image}
                     alt={step.title}
-                    className={`absolute z-10 w-full h-auto rounded-2xl shadow-lg transition-all duration-500 ease-out ${
+                    className={`absolute z-10 w-full h-auto rounded-2xl transition-all duration-500 ease-out ${
                       index === activeStep 
                         ? "opacity-100 scale-100" 
                         : "opacity-0 scale-95"
