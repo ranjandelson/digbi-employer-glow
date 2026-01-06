@@ -42,7 +42,7 @@ const CustomerJourneySection = () => {
         </div>
 
         {/* Steps */}
-        <div className="max-w-6xl mx-auto space-y-20 lg:space-y-32">
+        <div className="max-w-6xl mx-auto space-y-12 lg:space-y-16">
           {steps.map((step, index) => <div key={step.step} className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-10 lg:gap-16`}>
               {/* Text Content */}
               <div className="flex-1 text-center lg:text-left">
@@ -60,9 +60,8 @@ const CustomerJourneySection = () => {
               </div>
 
               {/* Image */}
-              <div className="flex-1 w-full max-w-md lg:max-w-none">
+              <div className="flex-1 w-full max-w-[280px] lg:max-w-[320px] mx-auto lg:mx-0">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl transform rotate-3 scale-105" />
                   <img src={step.image} alt={step.title} className="relative w-full h-auto rounded-2xl shadow-lg" />
                 </div>
               </div>
