@@ -61,8 +61,10 @@ const CustomerJourneySection = () => {
 
               {/* Image */}
               <div className="flex-1 w-full max-w-[280px] lg:max-w-[320px] mx-auto lg:mx-0">
-                <div className="relative">
-                  <img src={step.image} alt={step.title} className="relative w-full h-auto rounded-2xl shadow-lg" />
+                <div className="relative flex items-center justify-center">
+                  {/* Circle Background */}
+                  <div className="absolute w-[300px] h-[300px] lg:w-[340px] lg:h-[340px] rounded-full bg-primary/10" />
+                  <img src={step.image} alt={step.title} className="relative z-10 w-full h-auto rounded-2xl shadow-lg" />
                 </div>
               </div>
             </div>)}
