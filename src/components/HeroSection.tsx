@@ -15,7 +15,7 @@ const HeroSection = () => {
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full animate-fade-in w-fit bg-white/[0.77]">
               <Check className="w-5 h-5 text-success" />
-              <span className="font-medium text-muted-foreground text-xl">
+              <span className="font-medium text-muted-foreground text-sm md:text-xl">
                 Trusted by over 100 Employers  
               </span>
             </div>
