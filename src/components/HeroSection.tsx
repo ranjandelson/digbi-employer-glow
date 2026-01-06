@@ -13,9 +13,9 @@ const HeroSection = () => {
           {/* Content */}
           <div className="space-y-6 lg:space-y-8 flex flex-col justify-center">
             {/* Trust Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-full animate-fade-in w-fit">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full animate-fade-in w-fit bg-white/[0.77]">
               <Check className="w-5 h-5 text-success" />
-              <span className="font-medium text-muted-foreground text-2xl">
+              <span className="font-medium text-muted-foreground text-xl">
                 Trusted by over 100 Employers  
               </span>
             </div>
@@ -31,7 +31,7 @@ const HeroSection = () => {
             {/* Subheadline */}
             <p style={{
             animationDelay: "0.2s"
-          }} className="max-w-lg animate-fade-in text-2xl text-secondary-foreground">Curb healthcare costs with ONE platform for Obesity, Metabolic and GI health</p>
+          }} className="max-w-lg animate-fade-in text-2xl text-[#5c527a]">Curb healthcare costs with ONE platform for Obesity, Metabolic and GI health</p>
 
           </div>
 
