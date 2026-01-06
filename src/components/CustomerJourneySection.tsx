@@ -1,31 +1,34 @@
 import { ClipboardList, HeartPulse, Pill, Users } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import heroImage from "@/assets/hero-image.png";
+import clinicalEvaluationImg from "@/assets/clinical-evaluation.png";
+import carePlanImg from "@/assets/care-plan.png";
+import prescriptionsImg from "@/assets/prescriptions-approved.png";
+import expertSupportImg from "@/assets/expert-support.png";
 
 const steps = [{
   step: 1,
   title: "Clinical and lifestyle evaluation",
   description: "To help us create a care plan that meets your needs.",
   icon: ClipboardList,
-  image: heroImage
+  image: clinicalEvaluationImg
 }, {
   step: 2,
   title: "Receive a personalized care plan",
   description: "Includes at home tests, devices, medications when needed, and food and lifestyle support 24X7",
   icon: HeartPulse,
-  image: heroImage
+  image: carePlanImg
 }, {
   step: 3,
   title: "Get your prescriptions, CGM, test kits and labs approved",
   description: "With guidance every step of the way.",
   icon: Pill,
-  image: heroImage
+  image: prescriptionsImg
 }, {
   step: 4,
   title: "Access expert support at anytime",
   description: "From board-certified doctors, coaches and AI experts.",
   icon: Users,
-  image: heroImage
+  image: expertSupportImg
 }];
 
 const CustomerJourneySection = () => {
