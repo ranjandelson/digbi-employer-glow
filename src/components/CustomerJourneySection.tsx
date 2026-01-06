@@ -122,7 +122,7 @@ const CustomerJourneySection = () => {
             <div className="flex-1 flex items-center justify-center max-w-[220px]">
               <div className="relative flex items-center justify-center">
                 {/* Circle Background */}
-                <div className="absolute w-[240px] h-[240px] rounded-full bg-primary/10" />
+                <div className="absolute w-[320px] h-[320px] rounded-full bg-primary/10" />
                 
                 {/* Images with transition */}
                 {steps.map((step, index) => (
