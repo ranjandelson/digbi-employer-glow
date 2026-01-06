@@ -44,14 +44,6 @@ const HeroSection = () => {
               <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-3 py-2 rounded-lg border border-border/50">
                 <img src={cdcLogo} alt="CDC Full Plus Partner" className="h-10 lg:h-12 w-auto" />
               </div>
-              <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-border/50">
-                <span className="text-sm lg:text-base font-semibold text-foreground">Shortlister</span>
-                <span className="text-xs lg:text-sm text-muted-foreground">Top Vendor</span>
-              </div>
-              <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-border/50">
-                <span className="text-sm lg:text-base font-semibold text-foreground">Forbes</span>
-                <span className="text-xs lg:text-sm text-muted-foreground">America's Top Startup Employers</span>
-              </div>
             </div>
           </div>
         </div>
