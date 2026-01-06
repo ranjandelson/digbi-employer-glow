@@ -13,7 +13,7 @@ const steps = [{
   image: "https://join9am.com/hubfs/HowIt-2-UI.png"
 }, {
   step: 3,
-  title: "Get your prescriptions, CGM, at-home test kits and labs approved",
+  title: "Get your prescriptions, CGM, test kits and labs approved",
   description: "With guidance every step of the way.",
   icon: Pill,
   image: "https://join9am.com/hubfs/HowIt-3-UI.png"
