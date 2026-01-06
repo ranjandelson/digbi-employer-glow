@@ -20,7 +20,7 @@ const steps = [{
 }, {
   step: 4,
   title: "Access expert support at anytime",
-  description: "From board-certified obesity specialists.",
+  description: "From board-certified doctors, coaches and AI experts.",
   icon: Users,
   image: "https://join9am.com/hubfs/HowIt-4-UI-1.png"
 }];
