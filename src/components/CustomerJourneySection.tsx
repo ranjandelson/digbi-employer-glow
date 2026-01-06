@@ -1,5 +1,6 @@
 import { ClipboardList, HeartPulse, Pill, Users } from "lucide-react";
 import clinicalEvaluationImg from "@/assets/clinical-evaluation.png";
+import carePlanImg from "@/assets/care-plan.png";
 
 const steps = [{
   step: 1,
@@ -12,7 +13,7 @@ const steps = [{
   title: "Receive a personalized care plan",
   description: "Includes at home tests, devices, medications when needed, and food and lifestyle support 24X7",
   icon: HeartPulse,
-  image: "https://join9am.com/hubfs/HowIt-2-UI.png"
+  image: carePlanImg
 }, {
   step: 3,
   title: "Get your prescriptions, CGM, test kits and labs approved",
