@@ -12,6 +12,11 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="space-y-6 lg:space-y-8 flex flex-col justify-center">
+            {/* CDC Partner Logo */}
+            <div className="animate-fade-in">
+              <img src={cdcLogo} alt="CDC Full Plus Partner" className="h-14 lg:h-16 w-auto" />
+            </div>
+
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full animate-fade-in w-fit bg-white/[0.77]">
               <Check className="w-5 h-5 text-success" />
@@ -40,9 +45,6 @@ const HeroSection = () => {
           animationDelay: "0.3s"
         }}>
             <img src={heroImage} alt="Diverse workforce - construction workers, office professionals, and business teams" className="w-full max-w-md lg:max-w-lg rounded-2xl shadow-lg" />
-            <div className="flex justify-center mt-6">
-              <img src={cdcLogo} alt="CDC Full Plus Partner" className="h-14 lg:h-16 w-auto" />
-            </div>
           </div>
         </div>
       </div>
