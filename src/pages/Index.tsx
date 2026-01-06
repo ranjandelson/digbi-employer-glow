@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import WhyEmployersSection from "@/components/WhyEmployersSection";
 import GLPCompassSection from "@/components/GLPCompassSection";
-
+import HowItWorksSection from "@/components/HowItWorksSection";
 import ClaimsROISection from "@/components/ClaimsROISection";
 import CustomerJourneySection from "@/components/CustomerJourneySection";
 import FAQSection from "@/components/FAQSection";
@@ -18,6 +18,7 @@ const Index = () => {
       <GLPCompassSection />
       <ClaimsROISection />
       <CustomerJourneySection />
+      <HowItWorksSection />
       <FAQSection />
       <CTASection />
       <Footer />
