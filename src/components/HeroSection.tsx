@@ -11,7 +11,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
-          <div className="space-y-6 lg:space-y-8 flex flex-col justify-center">
+          <div className="space-y-6 lg:space-y-8 flex flex-col justify-center items-center md:items-start text-center md:text-left">
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full animate-fade-in w-fit bg-white/[0.77]">
               <Check className="w-5 h-5 text-success" />
