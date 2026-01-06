@@ -2,7 +2,7 @@ import { ClipboardList, HeartPulse, Pill, Users } from "lucide-react";
 import clinicalEvaluationImg from "@/assets/clinical-evaluation.png";
 import carePlanImg from "@/assets/care-plan.png";
 import prescriptionsImg from "@/assets/prescriptions-approved.png";
-
+import expertSupportImg from "@/assets/expert-support.png";
 const steps = [{
   step: 1,
   title: "Clinical and lifestyle evaluation",
@@ -26,7 +26,7 @@ const steps = [{
   title: "Access expert support at anytime",
   description: "From board-certified doctors, coaches and AI experts.",
   icon: Users,
-  image: "https://join9am.com/hubfs/HowIt-4-UI-1.png"
+  image: expertSupportImg
 }];
 const CustomerJourneySection = () => {
   return <section id="how-it-works" className="py-20 lg:py-32 bg-background">
