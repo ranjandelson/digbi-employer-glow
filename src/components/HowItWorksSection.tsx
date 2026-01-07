@@ -109,7 +109,7 @@ const HowItWorksSection = () => {
                         className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg z-10 transition-all duration-500 ${
                           isActive 
                             ? "bg-primary text-primary-foreground scale-110" 
-                            : "bg-primary/20 text-primary"
+                            : "bg-secondary text-primary border-2 border-primary/20"
                         } ${isCurrentlyAnimating ? "ring-4 ring-primary/30" : ""}`}
                       >
                         {step.step}
