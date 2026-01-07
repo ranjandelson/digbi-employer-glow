@@ -71,7 +71,7 @@ const ClaimsROISection = () => {
                   </div>
                   
                   {/* Progress Bar */}
-                  <div className="ml-16 pl-4">
+                  <div className="mt-2">
                     <div className="h-3 bg-muted rounded-full overflow-hidden">
                       <div className="h-full bg-gradient-to-r from-primary to-success rounded-full transition-all duration-1000 ease-out" style={{
                     width: isVisible ? item.barWidth : "0%",
