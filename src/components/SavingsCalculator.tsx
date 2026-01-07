@@ -17,7 +17,7 @@ const SavingsCalculator = () => {
       maximumFractionDigits: 0
     }).format(value);
   };
-  return <section className="py-20 lg:py-32 bg-gradient-stats">
+  return <section className="py-16 lg:py-32 bg-gradient-stats">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}

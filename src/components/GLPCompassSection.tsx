@@ -25,7 +25,7 @@ const benefits = [{
 }];
 
 const GLPCompassSection = () => {
-  return <section className="py-20 lg:py-32 bg-background">
+  return <section className="py-16 lg:py-32 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
