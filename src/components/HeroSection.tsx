@@ -1,7 +1,7 @@
 import heroImage from "@/assets/hero-section-2.png";
 import { Check } from "lucide-react";
 const HeroSection = () => {
-  return <section id="employers" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+  return <section id="employers" className="relative min-h-[calc(100vh-80px)] lg:min-h-screen flex items-center pt-20 pb-16 lg:pb-0 overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-hero opacity-5" />
       <div className="absolute top-20 right-0 w-1/2 h-1/2 bg-primary/5 rounded-full blur-3xl" />

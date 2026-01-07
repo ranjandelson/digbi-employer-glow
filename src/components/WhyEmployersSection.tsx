@@ -39,7 +39,7 @@ const outcomes = [{
   label: "Mental health improvement"
 }];
 const WhyEmployersSection = () => {
-  return <section className="py-20 lg:py-32 bg-secondary/30">
+  return <section className="py-16 lg:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
