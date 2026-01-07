@@ -94,9 +94,11 @@ const ClaimsROISection = () => {
                 </div>
               </div>
               <div className="mt-6 flex justify-center">
-                <Button size="lg" className="text-lg px-8">
-                  Get your personalized Analysis
-                </Button>
+                <a href="https://digbihealth.com/meeting" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="text-lg px-8">
+                    Get your personalized Analysis
+                  </Button>
+                </a>
               </div>
               <div className="mt-4 text-center">
                 <a href="https://www.mdpi.com/2227-9032/13/23/3147" target="_blank" rel="noopener noreferrer" className="hover:underline text-xs text-zinc-700">

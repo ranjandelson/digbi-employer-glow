@@ -86,9 +86,11 @@ const SavingsCalculator = () => {
 
               {/* CTA */}
               <div className="text-center pt-4">
-                <Button variant="hero" size="lg">
-                  Get Your Personalized Analysis
-                </Button>
+                <a href="https://digbihealth.com/meeting" target="_blank" rel="noopener noreferrer">
+                  <Button variant="hero" size="lg">
+                    Get Your Personalized Analysis
+                  </Button>
+                </a>
               </div>
             </div>
           </Card>
