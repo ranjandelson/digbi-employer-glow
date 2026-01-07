@@ -39,9 +39,25 @@ const PartnersSection = () => {
           </h2>
         </div>
 
-        {/* Logo Grid */}
+        {/* Logo Grid - First Row */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 items-center justify-items-center max-w-5xl mx-auto">
-          {partners.map((partner) => (
+          {partners.slice(0, 5).map((partner) => (
+            <div
+              key={partner.name}
+              className="flex items-center justify-center p-4 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="max-h-12 lg:max-h-16 w-auto object-contain"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Logo Grid - Second Row (Centered) */}
+        <div className="flex flex-wrap justify-center gap-8 lg:gap-12 items-center max-w-5xl mx-auto mt-8">
+          {partners.slice(5).map((partner) => (
             <div
               key={partner.name}
               className="flex items-center justify-center p-4 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
