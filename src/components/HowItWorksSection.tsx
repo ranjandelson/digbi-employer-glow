@@ -41,7 +41,7 @@ const HowItWorksSection = () => {
           {steps.map((step, index) => <div key={step.title} className="relative">
               <Card className="p-6 lg:p-8 h-full transition-all duration-300 hover:shadow-lg border-border bg-card relative">
                 {/* Step Number - Positioned on the right */}
-                <div className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center font-bold text-lg bg-zinc-50 border-2 border-[#481ad1]/[0.62] rounded-2xl text-[#481ad1]/[0.63]">
+                <div className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center font-bold text-lg bg-zinc-50 border-[#481ad1]/[0.62] rounded-2xl text-[#481ad1]/[0.63] border">
                   {step.step}
                 </div>
 
