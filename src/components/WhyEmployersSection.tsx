@@ -10,7 +10,7 @@ const reasons = [{
   id: "consolidate-solutions",
   icon: Layers,
   title: "Consolidate 5 Point Solutions",
-  description: "Digbi's versatile Precision Biology platform can replace existing point solutions for weight and GLP-1 medication management, cardiometabolic care, diabetes management, and digestive care, or offer a best-in-class point solution to enhance your existing offerings."
+  description: "Digbi's versatile Precision Biology platform can replace existing point solutions for weight and GLP-1 medication management, cardiometabolic, diabetes, and digestive care."
 }, {
   id: "simple-launch",
   icon: Rocket,
