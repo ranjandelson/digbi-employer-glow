@@ -39,9 +39,9 @@ const HowItWorksSection = () => {
         {/* Steps Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 max-w-6xl mx-auto">
           {steps.map((step, index) => <div key={step.title} className="relative">
-              <Card className="p-6 lg:p-8 h-full transition-all duration-300 hover:shadow-lg border-border bg-card">
-                {/* Step Number */}
-                <div className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg mb-6">
+              <Card className="p-6 lg:p-8 h-full transition-all duration-300 hover:shadow-lg border-border bg-card relative">
+                {/* Step Number - Positioned on the right */}
+                <div className="absolute top-6 right-6 w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
                   {step.step}
                 </div>
 
