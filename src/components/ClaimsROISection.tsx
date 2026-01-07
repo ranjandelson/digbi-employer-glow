@@ -64,7 +64,7 @@ const ClaimsROISection = () => {
                       <p className="text-sm text-muted-foreground">{item.description}</p>
                     </div>
                     <div className="text-right shrink-0">
-                      <span className="text-2xl lg:text-3xl font-bold text-emerald-900">
+                      <span className="text-2xl lg:text-3xl text-[#308886] font-extrabold">
                         -{item.value}
                       </span>
                     </div>
