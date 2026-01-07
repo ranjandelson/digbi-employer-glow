@@ -1,5 +1,4 @@
-import heroImage from "@/assets/hero-image.png";
-import cdcLogo from "@/assets/cdc-partner-logo.png";
+import heroImage from "@/assets/hero-section-2.png";
 import { Check } from "lucide-react";
 const HeroSection = () => {
   return <section id="employers" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
@@ -39,12 +38,7 @@ const HeroSection = () => {
           <div className="relative animate-fade-in flex flex-col items-center justify-center" style={{
           animationDelay: "0.3s"
         }}>
-            <img src={heroImage} alt="Diverse workforce - construction workers, office professionals, and business teams" className="w-full max-w-md lg:max-w-lg rounded-2xl shadow-lg" />
-            <div className="flex flex-wrap justify-center items-center gap-4 mt-6">
-              <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-3 py-2 rounded-lg border border-border/50">
-                <img src={cdcLogo} alt="CDC Full Plus Partner" className="h-10 lg:h-12 w-auto" />
-              </div>
-            </div>
+            <img src={heroImage} alt="Diverse workforce - construction workers, office professionals, and business teams" className="w-full max-w-md lg:max-w-lg" />
           </div>
         </div>
       </div>
