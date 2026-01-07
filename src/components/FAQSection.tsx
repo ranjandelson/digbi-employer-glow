@@ -55,10 +55,12 @@ const FAQSection = () => {
             <p className="text-muted-foreground mb-4">
               Still have questions? We'd love to help.
             </p>
-            <Button variant="hero" size="lg">
-              Book Your Demo
-              <ArrowRight className="w-5 h-5" />
-            </Button>
+            <a href="https://digbihealth.com/meeting" target="_blank" rel="noopener noreferrer">
+              <Button variant="hero" size="lg">
+                Book Your Demo
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>

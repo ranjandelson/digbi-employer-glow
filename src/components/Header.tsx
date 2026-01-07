@@ -34,9 +34,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button variant="default" size="default">
-              Book a Demo
-            </Button>
+            <a href="https://digbihealth.com/meeting" target="_blank" rel="noopener noreferrer">
+              <Button variant="default" size="default">
+                Book a Demo
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -51,9 +53,11 @@ const Header = () => {
               {navLinks.map(link => <a key={link.label} href={link.href} className="text-muted-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setIsMenuOpen(false)}>
                   {link.label}
                 </a>)}
-              <Button variant="default" className="mt-2">
-                Book a Demo
-              </Button>
+              <a href="https://digbihealth.com/meeting" target="_blank" rel="noopener noreferrer">
+                <Button variant="default" className="mt-2">
+                  Book a Demo
+                </Button>
+              </a>
             </nav>
           </div>}
       </div>

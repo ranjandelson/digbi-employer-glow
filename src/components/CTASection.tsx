@@ -20,10 +20,12 @@ const CTASection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button variant="hero-outline" size="xl">
-              Book Your Demo
-              <ArrowRight className="w-5 h-5" />
-            </Button>
+            <a href="https://digbihealth.com/meeting" target="_blank" rel="noopener noreferrer">
+              <Button variant="hero-outline" size="xl">
+                Book Your Demo
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </a>
           </div>
 
           {/* Contact Options */}
