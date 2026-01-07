@@ -87,34 +87,37 @@ const HowItWorksSection = () => {
           {/* Steps Timeline */}
           <div className="max-w-6xl mx-auto">
             {/* Step Numbers with Connecting Line - Desktop */}
-            <div className="hidden lg:flex items-center justify-between mb-8 relative px-[72px]">
+            <div className="hidden lg:block mb-8 relative">
               {/* Background Line */}
-              <div className="absolute left-[72px] right-[72px] top-1/2 h-0.5 bg-primary/20 -translate-y-1/2" />
+              <div className="absolute left-[calc(12.5%)] right-[calc(12.5%)] top-1/2 h-0.5 bg-primary/20 -translate-y-1/2" />
               
               {/* Animated Progress Line */}
               <div 
-                className="absolute left-[72px] top-1/2 h-0.5 bg-primary -translate-y-1/2 transition-all duration-300 ease-out"
-                style={{ width: `calc(${Math.min(lineProgress, 100)}% - 144px)` }}
+                className="absolute left-[calc(12.5%)] top-1/2 h-0.5 bg-primary -translate-y-1/2 transition-all duration-300 ease-out"
+                style={{ width: `calc(${Math.min(lineProgress, 100)}% * 0.75)` }}
               />
               
-              {/* Step Numbers */}
-              {steps.map((step, index) => {
-                const isActive = index <= activeStep;
-                const isCurrentlyAnimating = index === activeStep;
-                
-                return (
-                  <div
-                    key={step.step}
-                    className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg z-10 transition-all duration-500 ${
-                      isActive 
-                        ? "bg-primary text-primary-foreground scale-110" 
-                        : "bg-primary/20 text-primary"
-                    } ${isCurrentlyAnimating ? "ring-4 ring-primary/30" : ""}`}
-                  >
-                    {step.step}
-                  </div>
-                );
-              })}
+              {/* Step Numbers - Grid aligned with cards */}
+              <div className="grid grid-cols-4 gap-4">
+                {steps.map((step, index) => {
+                  const isActive = index <= activeStep;
+                  const isCurrentlyAnimating = index === activeStep;
+                  
+                  return (
+                    <div key={step.step} className="flex justify-center">
+                      <div
+                        className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg z-10 transition-all duration-500 ${
+                          isActive 
+                            ? "bg-primary text-primary-foreground scale-110" 
+                            : "bg-primary/20 text-primary"
+                        } ${isCurrentlyAnimating ? "ring-4 ring-primary/30" : ""}`}
+                      >
+                        {step.step}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
             {/* Cards Grid */}
