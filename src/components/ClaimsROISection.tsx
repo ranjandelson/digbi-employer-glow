@@ -84,13 +84,12 @@ const ClaimsROISection = () => {
 
             {/* Total Highlight */}
             <div className="mt-12 pt-8 border-t border-border">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between text-center md:text-left">
                 <div>
-                  <p className="font-medium text-foreground text-2xl">Total Annual Savings across conditions</p>
+                  <p className="font-medium text-foreground text-xl md:text-2xl">Total Annual Savings across conditions</p>
                 </div>
-                <div className="text-right">
-                  <span className="text-4xl text-primary lg:text-3xl font-extrabold">-$15,480</span>
-                  
+                <div className="mb-2 md:mb-0">
+                  <span className="text-4xl lg:text-3xl text-primary font-extrabold">-$15,480</span>
                 </div>
               </div>
               <div className="mt-6 flex justify-center">
