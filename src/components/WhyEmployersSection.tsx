@@ -5,7 +5,7 @@ const reasons = [{
   id: "financially-derisked",
   icon: Shield,
   title: "Financially De-risked.",
-  description: "Digbi guarantees ROI, placing 100% of fees at risk. All results are verifiable with transparent, claims-based reporting."
+  description: "Digbi guarantees ROI, placing 100% of fees at risk. Milestone-based pricing. All results are verifiable with transparent, claims-based reporting."
 }, {
   id: "consolidate-solutions",
   icon: Layers,
