@@ -98,8 +98,8 @@ const ClaimsROISection = () => {
                   Get your personalized Analysis
                 </Button>
               </div>
-              <div className="mt-4">
-                <a href="https://www.mdpi.com/2227-9032/13/23/3147" target="_blank" rel="noopener noreferrer" className="hover:underline text-xs text-zinc-700 text-justify">
+              <div className="mt-4 text-center">
+                <a href="https://www.mdpi.com/2227-9032/13/23/3147" target="_blank" rel="noopener noreferrer" className="hover:underline text-xs text-zinc-700">
                   Source: Economic Impact of a Precision Biology Care on Employer Health Costs: A Multi-Employer and Multi-Year Claims Analysis
                 </a>
               </div>
