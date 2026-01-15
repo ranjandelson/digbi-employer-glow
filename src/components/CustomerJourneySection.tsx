@@ -44,31 +44,36 @@ const CustomerJourneySection = () => {
           </h2>
         </div>
 
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        {/* Steps - Vertical Stack */}
+        <div className="space-y-12 max-w-4xl mx-auto">
           {steps.map((step) => (
-            <div key={step.step} className="flex flex-col items-center text-center">
+            <div key={step.step} className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
               {/* Image */}
-              <div className="relative mb-6">
-                <div className="absolute inset-0 w-[200px] h-[200px] rounded-full bg-primary/10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />
-                <img
-                  src={step.image}
-                  alt={step.title}
-                  className="relative z-10 w-[160px] h-auto rounded-2xl"
-                />
+              <div className="flex-shrink-0">
+                <div className="relative">
+                  <div className="absolute w-[240px] h-[240px] rounded-full bg-primary/10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="relative z-10 w-[180px] h-auto rounded-2xl"
+                  />
+                </div>
               </div>
               
-              {/* Step Number */}
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold text-sm mb-4">
-                {step.step}
+              {/* Content */}
+              <div className="flex-1 text-center lg:text-left">
+                {/* Step Number */}
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-lg mb-4">
+                  {step.step}
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-lg text-muted-foreground max-w-md">
+                  {step.description}
+                </p>
               </div>
-              
-              <h3 className="text-xl font-bold text-foreground mb-2">
-                {step.title}
-              </h3>
-              <p className="text-muted-foreground max-w-xs">
-                {step.description}
-              </p>
             </div>
           ))}
         </div>
