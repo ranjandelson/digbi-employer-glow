@@ -1,7 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { FileText, RefreshCw, Megaphone, BarChart3 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const steps = [{
   step: 1,
@@ -26,73 +24,51 @@ const steps = [{
 }];
 
 const HowItWorksSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState(0);
-  const isMobile = useIsMobile();
+  return (
+    <section id="how-it-works-employers" className="py-16 lg:py-24 bg-gradient-stats">
+      <div className="container mx-auto px-4 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-12 lg:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
+            <RefreshCw className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-primary">Simple Implementation</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            How Digbi Health works for Employers
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Get started quickly with our streamlined implementation process designed for busy HR and IT teams.
+          </p>
+        </div>
 
-  useEffect(() => {
-    if (isMobile) return; // Disable scroll effect on mobile
-    
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-
-      const rect = sectionRef.current.getBoundingClientRect();
-      const sectionHeight = sectionRef.current.offsetHeight;
-      const viewportHeight = window.innerHeight;
-      
-      // Calculate scroll progress through the section
-      const scrollStart = rect.top;
-      const scrollEnd = rect.bottom - viewportHeight;
-      const scrollRange = sectionHeight - viewportHeight;
-      
-      if (scrollStart <= 0 && scrollEnd >= 0) {
-        const currentProgress = Math.abs(scrollStart) / scrollRange;
-        setProgress(Math.min(Math.max(currentProgress, 0), 1));
-      } else if (scrollStart > 0) {
-        setProgress(0);
-      } else {
-        setProgress(1);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMobile]);
-
-  // Calculate which step is active and the line progress
-  const activeStep = Math.floor(progress * steps.length);
-  const lineProgress = progress * 100;
-
-  // Mobile Layout - Simple stacked cards
-  if (isMobile) {
-    return (
-      <section className="py-16 bg-gradient-stats">
-        <div className="container mx-auto px-4">
-          {/* Section Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
-              <RefreshCw className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Simple Implementation</span>
+        {/* Steps Grid */}
+        <div className="max-w-6xl mx-auto">
+          {/* Step Numbers with Connecting Line - Desktop */}
+          <div className="hidden lg:block mb-8 relative">
+            {/* Background Line */}
+            <div className="absolute left-[calc(12.5%)] right-[calc(12.5%)] top-1/2 h-0.5 bg-primary -translate-y-1/2" />
+            
+            {/* Step Numbers - Grid aligned with cards */}
+            <div className="grid grid-cols-4 gap-4">
+              {steps.map((step) => (
+                <div key={step.step} className="flex justify-center">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg z-10 bg-primary text-primary-foreground">
+                    {step.step}
+                  </div>
+                </div>
+              ))}
             </div>
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              How Digbi Health works for Employers
-            </h2>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-              Get started quickly with our streamlined implementation process designed for busy HR and IT teams.
-            </p>
           </div>
 
-          {/* Steps Grid */}
-          <div className="grid grid-cols-1 gap-6">
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
             {steps.map((step) => (
               <Card
                 key={step.title}
-                className="p-6 text-center border-border bg-card shadow-lg"
+                className="p-6 lg:p-8 text-center border-border bg-card shadow-lg"
               >
-                {/* Step Number */}
-                <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm mx-auto mb-4 bg-primary text-primary-foreground">
+                {/* Mobile Step Number */}
+                <div className="lg:hidden w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm mx-auto mb-4 bg-primary text-primary-foreground">
                   {step.step}
                 </div>
 
@@ -110,129 +86,6 @@ const HowItWorksSection = () => {
                 </p>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  // Desktop Layout - Sticky scroll effect
-  return (
-    <section 
-      ref={sectionRef}
-      id="how-it-works" 
-      className="relative bg-gradient-stats"
-      style={{ height: "200vh" }}
-    >
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden py-20 lg:py-32">
-        <div className="container mx-auto px-4 lg:px-8">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
-              <RefreshCw className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Simple Implementation</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              How Digbi Health works for Employers
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Get started quickly with our streamlined implementation process designed for busy HR and IT teams.
-            </p>
-          </div>
-
-          {/* Steps Timeline */}
-          <div className="max-w-6xl mx-auto">
-            {/* Step Numbers with Connecting Line - Desktop */}
-            <div className="hidden lg:block mb-8 relative">
-              {/* Background Line */}
-              <div className="absolute left-[calc(12.5%)] right-[calc(12.5%)] top-1/2 h-0.5 bg-primary/20 -translate-y-1/2" />
-              
-              {/* Animated Progress Line */}
-              <div 
-                className="absolute left-[calc(12.5%)] top-1/2 h-0.5 bg-primary -translate-y-1/2 transition-all duration-300 ease-out"
-                style={{ width: `calc(${Math.min(lineProgress, 100)}% * 0.75)` }}
-              />
-              
-              {/* Step Numbers - Grid aligned with cards */}
-              <div className="grid grid-cols-4 gap-4">
-                {steps.map((step, index) => {
-                  const isActive = index <= activeStep;
-                  const isCurrentlyAnimating = index === activeStep;
-                  
-                  return (
-                    <div key={step.step} className="flex justify-center">
-                      <div
-                        className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg z-10 transition-all duration-500 ${
-                          isActive 
-                            ? "bg-primary text-primary-foreground scale-110" 
-                            : "bg-secondary text-primary border-2 border-primary/20"
-                        } ${isCurrentlyAnimating ? "ring-4 ring-primary/30" : ""}`}
-                      >
-                        {step.step}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Cards Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
-              {steps.map((step, index) => {
-                const isActive = index <= activeStep;
-                const delay = index * 0.1;
-                
-                return (
-                  <Card
-                    key={step.title}
-                    className={`p-6 lg:p-8 text-center transition-all duration-500 border-border bg-card ${
-                      isActive 
-                        ? "opacity-100 translate-y-0 shadow-lg" 
-                        : "opacity-40 translate-y-4"
-                    }`}
-                    style={{ transitionDelay: `${delay}s` }}
-                  >
-                    {/* Mobile Step Number */}
-                    <div className={`lg:hidden w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm mx-auto mb-4 transition-all duration-500 ${
-                      isActive 
-                        ? "bg-primary text-primary-foreground" 
-                        : "bg-primary/20 text-primary"
-                    }`}>
-                      {step.step}
-                    </div>
-
-                    {/* Icon */}
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 ${
-                      isActive ? "bg-secondary" : "bg-secondary/50"
-                    }`}>
-                      <step.icon className={`w-7 h-7 transition-all duration-500 ${
-                        isActive ? "text-primary" : "text-primary/50"
-                      }`} />
-                    </div>
-
-                    {/* Content */}
-                    <h3 className="text-xl font-semibold text-foreground mb-3">
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {step.description}
-                    </p>
-                  </Card>
-                );
-              })}
-            </div>
-
-            {/* Decorative Dots */}
-            <div className="flex justify-center gap-2 mt-10">
-              {steps.map((step, index) => (
-                <div
-                  key={step.step}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index <= activeStep ? "bg-primary scale-110" : "bg-primary/30"
-                  }`}
-                />
-              ))}
-            </div>
           </div>
         </div>
       </div>
