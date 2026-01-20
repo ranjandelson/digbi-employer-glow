@@ -19,17 +19,12 @@ const Footer = () => {
       { label: "Case Studies", href: "https://cdn.shopify.com/s/files/1/2078/0145/files/Blue_Collar_Case_Study_Digbi_Health.pdf?v=1736155367" },
       { label: "FAQs", href: "#faqs" },
     ],
-    legal: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "HIPAA Compliance", href: "#" },
-    ],
   };
 
   return (
     <footer className="bg-foreground text-background py-16 lg:py-20">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <a href="/" className="flex items-center mb-6">
@@ -94,23 +89,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal Links */}
-          <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-background/70 hover:text-background transition-colors text-sm"
-                    {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* Bottom Bar */}
