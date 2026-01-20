@@ -11,7 +11,7 @@ const Header = () => {
     label: "How It Works",
     href: "#how-it-works"
   }, {
-    label: "Outcomes",
+    label: "ROI/Savings",
     href: "#outcomes"
   }, {
     label: "FAQs",
