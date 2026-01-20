@@ -88,7 +88,7 @@ const SavingsCalculator = () => {
               <div className="text-center pt-4">
                 <a href="https://cdn.shopify.com/s/files/1/2078/0145/files/6_pager_Precision-Biology-Telehealth-Actuarially-Validated-Medical-Cost-Savings_1.pdf?v=1768881682" target="_blank" rel="noopener noreferrer">
                   <Button variant="hero" size="lg">
-                    Read Digbi's ROI study
+                    Read ROI study
                   </Button>
                 </a>
               </div>

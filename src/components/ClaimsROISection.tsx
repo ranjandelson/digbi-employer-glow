@@ -95,7 +95,7 @@ const ClaimsROISection = () => {
               <div className="mt-6 flex justify-center">
                 <a href="https://cdn.shopify.com/s/files/1/2078/0145/files/6_pager_Precision-Biology-Telehealth-Actuarially-Validated-Medical-Cost-Savings_1.pdf?v=1768881682" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="text-lg px-8">
-                    Read Digbi's ROI study
+                    Read ROI study
                   </Button>
                 </a>
               </div>
