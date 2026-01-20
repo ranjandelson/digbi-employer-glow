@@ -12,7 +12,6 @@ const Footer = () => {
     solutions: [
       { label: "For Employers", href: "#employers" },
       { label: "For Health Plans", href: "#" },
-      { label: "For Individuals", href: "#" },
     ],
     resources: [
       { label: "Blog", href: "#" },
