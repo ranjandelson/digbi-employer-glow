@@ -5,7 +5,7 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { label: "About Us", href: "#" },
+      { label: "About Us", href: "https://digbihealth.com/pages/about-us" },
       { label: "Press", href: "https://digbihealth.com/blogs/press-release" },
       { label: "Contact", href: "#" },
     ],
