@@ -50,6 +50,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     className="text-background/70 hover:text-background transition-colors text-sm"
+                    {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   >
                     {link.label}
                   </a>
@@ -67,6 +68,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     className="text-background/70 hover:text-background transition-colors text-sm"
+                    {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   >
                     {link.label}
                   </a>
@@ -84,6 +86,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     className="text-background/70 hover:text-background transition-colors text-sm"
+                    {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   >
                     {link.label}
                   </a>
@@ -101,6 +104,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     className="text-background/70 hover:text-background transition-colors text-sm"
+                    {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   >
                     {link.label}
                   </a>
