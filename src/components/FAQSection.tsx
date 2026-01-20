@@ -20,7 +20,7 @@ const faqs = [{
   answer: "Most employers can go live within 4-6 weeks. Our dedicated implementation team handles the heavy lifting, from contracting through launch, with minimal IT requirements on your end."
 }];
 const FAQSection = () => {
-  return <section id="faqs" className="py-16 lg:py-32 bg-background">
+  return <section id="faqs" className="py-12 lg:py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
