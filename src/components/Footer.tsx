@@ -16,7 +16,7 @@ const Footer = () => {
     resources: [
       { label: "Blog", href: "#" },
       { label: "Research", href: "#" },
-      { label: "Case Studies", href: "#" },
+      { label: "Case Studies", href: "https://cdn.shopify.com/s/files/1/2078/0145/files/Blue_Collar_Case_Study_Digbi_Health.pdf?v=1736155367" },
       { label: "FAQs", href: "#faqs" },
     ],
     legal: [
