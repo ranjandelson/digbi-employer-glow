@@ -11,7 +11,7 @@ const Footer = () => {
     ],
     solutions: [
       { label: "For Employers", href: "#employers" },
-      { label: "For Health Plans", href: "#" },
+      { label: "For Health Plans", href: "https://digbihealth.com/" },
     ],
     resources: [
       { label: "Blog", href: "https://digbihealth.com/blogs/science-talk" },
