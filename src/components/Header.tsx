@@ -12,7 +12,7 @@ const Header = () => {
     href: "#how-it-works"
   }, {
     label: "ROI/Savings",
-    href: "#outcomes"
+    href: "https://cdn.shopify.com/s/files/1/2078/0145/files/6_pager_Precision-Biology-Telehealth-Actuarially-Validated-Medical-Cost-Savings_1.pdf?v=1768881682"
   }, {
     label: "FAQs",
     href: "#faqs"
@@ -27,7 +27,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map(link => <a key={link.label} href={link.href} className="text-muted-foreground hover:text-primary transition-colors font-medium">
+            {navLinks.map(link => <a key={link.label} href={link.href} className="text-muted-foreground hover:text-primary transition-colors font-medium" {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
                 {link.label}
               </a>)}
           </nav>
@@ -42,7 +42,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && <div className="lg:hidden py-4 border-t border-border animate-fade-in">
             <nav className="flex flex-col gap-4">
-              {navLinks.map(link => <a key={link.label} href={link.href} className="text-muted-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setIsMenuOpen(false)}>
+              {navLinks.map(link => <a key={link.label} href={link.href} className="text-muted-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setIsMenuOpen(false)} {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
                   {link.label}
                 </a>)}
             </nav>
