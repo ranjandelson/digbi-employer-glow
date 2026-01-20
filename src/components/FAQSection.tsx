@@ -1,6 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
-import { HelpCircle, ArrowRight } from "lucide-react";
+import { HelpCircle } from "lucide-react";
 const faqs = [{
   question: "How is Digbi Health different from other wellness or point solutions?",
   answer: "Most point solutions focus on a single condition or a narrow approach. Digbi Health is designed to be more holistic. We are the first integrated, multispecialty care across all cardiometabolic and GI conditions—at one transparent price point. Our team of specialists works together to support each member's long-term health through personalized care based on their unique biology"
@@ -50,18 +49,6 @@ const FAQSection = () => {
               </AccordionItem>)}
           </Accordion>
 
-          {/* CTA */}
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-4">
-              Still have questions? We'd love to help.
-            </p>
-            <a href="https://digbihealth.com/meeting" target="_blank" rel="noopener noreferrer">
-              <Button variant="hero" size="lg">
-                Book Your Demo
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-            </a>
-          </div>
         </div>
       </div>
     </section>;
