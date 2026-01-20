@@ -7,7 +7,7 @@ const Footer = () => {
     company: [
       { label: "About Us", href: "#" },
       { label: "Careers", href: "#" },
-      { label: "Press", href: "#" },
+      { label: "Press", href: "https://digbihealth.com/blogs/press-release" },
       { label: "Contact", href: "#" },
     ],
     solutions: [
