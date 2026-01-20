@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 const CTASection = () => {
   return <section className="py-16 lg:py-32 bg-gradient-hero relative overflow-hidden">
       {/* Background Elements */}
@@ -29,13 +29,7 @@ const CTASection = () => {
           </div>
 
           {/* Contact Options */}
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-            <a href="tel:+1-508-443-4424" className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-              <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center">
-                <Phone className="w-5 h-5" />
-              </div>
-              <span className="font-medium">(508)-443-4424</span>
-            </a>
+          <div className="flex justify-center items-center">
             <a href="mailto:partner@digbihealth.com" className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center">
                 <Mail className="w-5 h-5" />
