@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 const CTASection = () => {
   return <section className="py-16 lg:py-32 bg-gradient-hero relative overflow-hidden">
       {/* Background Elements */}
@@ -18,15 +17,6 @@ const CTASection = () => {
             Over 100 Employers trust us. Precision Biology is not the future of care. It is the new standard. 
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <a href="https://digbihealth.com/meeting" target="_blank" rel="noopener noreferrer">
-              <Button variant="hero-outline" size="xl">
-                Book Your Demo
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-            </a>
-          </div>
 
           {/* Contact Options */}
           <div className="flex justify-center items-center">
