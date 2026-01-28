@@ -1,53 +1,335 @@
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
-import digbiLogo from "@/assets/digbi-health-logo.png";
+import { useState, useRef, useEffect } from "react";
+import { Menu, ChevronDown, Briefcase, Stethoscope, Users, Star, FlaskConical, FileText, Info, Newspaper, Calendar, HelpCircle, UserCheck } from "lucide-react";
+import { cn } from "@/lib/utils";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+// Navigation configuration - easily update items and icons here
+const navConfig = [
+  {
+    label: "Partner",
+    items: [
+      { 
+        label: "Employers & Payers", 
+        href: "https://digbihealth.com/pages/partner",
+        icon: Briefcase
+      },
+      { 
+        label: "Health Care Providers", 
+        href: "https://digbihealth.com/pages/health-care-providers",
+        icon: Stethoscope
+      },
+    ],
+  },
+  {
+    label: "Humans of Digbi",
+    items: [
+      { 
+        label: "Humans of Digbi", 
+        href: "https://digbihealth.com/blogs/humans-of-digbi",
+        icon: Users
+      },
+      { 
+        label: "Member Reviews", 
+        href: "https://digbihealth.com/pages/reviews",
+        icon: Star
+      },
+    ],
+  },
+  {
+    label: "The Science",
+    items: [
+      { 
+        label: "Blog: Pharma & Science", 
+        href: "https://digbihealth.com/blogs/science-talk",
+        icon: FlaskConical
+      },
+      { 
+        label: "Published Research", 
+        href: "https://digbihealth.com/blogs/published-research",
+        icon: FileText
+      },
+    ],
+  },
+  {
+    label: "About Us",
+    items: [
+      { 
+        label: "About Us", 
+        href: "https://digbihealth.com/pages/about-us",
+        icon: Info
+      },
+      { 
+        label: "Press Releases", 
+        href: "https://digbihealth.com/blogs/press-release",
+        icon: Newspaper
+      },
+      { 
+        label: "Careers", 
+        href: "https://digbihealth.com/a/careers",
+        icon: UserCheck
+      },
+      { 
+        label: "Events", 
+        href: "https://digbihealth.com/pages/digbi-live",
+        icon: Calendar
+      },
+      { 
+        label: "Help", 
+        href: "https://digbihealth.com/pages/help",
+        icon: HelpCircle
+      },
+    ],
+  },
+];
+
+interface DropdownMenuProps {
+  label: string;
+  items: {
+    label: string;
+    href: string;
+    icon: React.ComponentType<{ className?: string }>;
+  }[];
+  isOpen: boolean;
+  onToggle: () => void;
+  onClose: () => void;
+  id: string;
+}
+
+const DropdownMenu = ({ label, items, isOpen, onToggle, onClose, id }: DropdownMenuProps) => {
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        triggerRef.current &&
+        !triggerRef.current.contains(event.target as Node)
+      ) {
+        onClose();
+      }
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && isOpen) {
+        onClose();
+        triggerRef.current?.focus();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
+
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      onToggle();
+    }
+  };
+
+  return (
+    <div 
+      className="relative"
+      onMouseEnter={onToggle}
+      onMouseLeave={onClose}
+    >
+      <button
+        ref={triggerRef}
+        onClick={onToggle}
+        onKeyDown={handleKeyDown}
+        aria-haspopup="true"
+        aria-expanded={isOpen}
+        aria-controls={`dropdown-${id}`}
+        className={cn(
+          "flex items-center gap-1.5 px-2 py-2 text-sm font-medium transition-colors rounded-md",
+          "text-foreground/80 hover:text-[#4F26B7] focus:text-[#4F26B7]",
+          "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4F26B7] focus-visible:ring-offset-2",
+          isOpen && "text-[#4F26B7]"
+        )}
+      >
+        {label}
+        <ChevronDown 
+          className={cn(
+            "h-4 w-4 transition-transform duration-150",
+            isOpen && "rotate-180"
+          )} 
+        />
+      </button>
+
+      {isOpen && (
+        <div
+          ref={menuRef}
+          id={`dropdown-${id}`}
+          role="menu"
+          aria-orientation="vertical"
+          className="absolute top-full left-0 mt-1 min-w-[220px] bg-background border border-border rounded-lg shadow-lg py-2 z-50 animate-fade-in"
+        >
+          {items.map((item, index) => {
+            const IconComponent = item.icon;
+            return (
+              <a
+                key={index}
+                href={item.href}
+                role="menuitem"
+                className={cn(
+                  "flex items-center gap-3 px-4 py-2.5 text-sm transition-colors",
+                  "text-muted-foreground hover:text-[#4F26B7] hover:bg-accent/50",
+                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#4F26B7]"
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconComponent className="h-4 w-4 flex-shrink-0" />
+                <span>{item.label}</span>
+              </a>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navLinks = [{
-    label: "For Employers",
-    href: "#employers"
-  }, {
-    label: "How It Works",
-    href: "#how-it-works"
-  }, {
-    label: "ROI/Savings",
-    href: "https://cdn.shopify.com/s/files/1/2078/0145/files/6_pager_Precision-Biology-Telehealth-Actuarially-Validated-Medical-Cost-Savings_1.pdf?v=1768881682"
-  }, {
-    label: "FAQs",
-    href: "#faqs"
-  }];
-  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <a href="/" className="flex items-center">
-            <img src={digbiLogo} alt="Digbi Health" className="h-14 w-auto" />
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleDropdownToggle = (label: string) => {
+    setOpenDropdown(openDropdown === label ? null : label);
+  };
+
+  const handleDropdownClose = () => {
+    setOpenDropdown(null);
+  };
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="flex items-center h-16 lg:h-20">
+          {/* Logo - flex: 0 0 auto */}
+          <a href="/" className="flex-shrink-0 flex items-center">
+            <img 
+              src="https://cdn.shopify.com/s/files/1/2078/0145/files/digbi_logo.svg" 
+              alt="Digbi Health" 
+              className="h-10 lg:h-12 w-auto" 
+            />
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map(link => <a key={link.label} href={link.href} className="text-muted-foreground hover:text-primary transition-colors font-medium" {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-                {link.label}
-              </a>)}
+          {/* Desktop Navigation - flex: 1 */}
+          <nav className="hidden lg:flex flex-1" aria-label="Main navigation">
+            <ul className="flex justify-evenly w-full gap-4">
+              {navConfig.map((navItem) => (
+                <li key={navItem.label}>
+                  <DropdownMenu
+                    label={navItem.label}
+                    items={navItem.items}
+                    isOpen={openDropdown === navItem.label}
+                    onToggle={() => handleDropdownToggle(navItem.label)}
+                    onClose={handleDropdownClose}
+                    id={navItem.label.toLowerCase().replace(/\s+/g, "-")}
+                  />
+                </li>
+              ))}
+            </ul>
           </nav>
 
-
           {/* Mobile Menu Toggle */}
-          <button className="lg:hidden p-2 text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <button 
+                className="lg:hidden ml-auto p-2 text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4F26B7] rounded-md" 
+                aria-label="Open menu"
+              >
+                <Menu size={24} />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-full sm:max-w-sm p-0">
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+              <div className="flex flex-col h-full">
+                {/* Mobile Header */}
+                <div className="flex items-center justify-between p-4 border-b border-border">
+                  <a href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                    <img 
+                      src="https://cdn.shopify.com/s/files/1/2078/0145/files/digbi_logo.svg" 
+                      alt="Digbi Health" 
+                      className="h-8 w-auto" 
+                    />
+                  </a>
+                </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && <div className="lg:hidden py-4 border-t border-border animate-fade-in">
-            <nav className="flex flex-col gap-4">
-              {navLinks.map(link => <a key={link.label} href={link.href} className="text-muted-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setIsMenuOpen(false)} {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-                  {link.label}
-                </a>)}
-            </nav>
-          </div>}
+                {/* Mobile Navigation */}
+                <nav className="flex-1 overflow-y-auto py-4" aria-label="Mobile navigation">
+                  <Accordion type="single" collapsible className="w-full">
+                    {navConfig.map((navItem, index) => (
+                      <AccordionItem 
+                        key={navItem.label} 
+                        value={`item-${index}`}
+                        className="border-b-0"
+                      >
+                        <AccordionTrigger 
+                          className={cn(
+                            "px-6 py-3 text-base font-medium hover:no-underline",
+                            "text-foreground hover:text-[#4F26B7]",
+                            "[&[data-state=open]]:text-[#4F26B7]",
+                            "[&>svg]:h-4 [&>svg]:w-4 [&>svg]:transition-transform [&>svg]:duration-150"
+                          )}
+                        >
+                          {navItem.label}
+                        </AccordionTrigger>
+                        <AccordionContent className="pb-2">
+                          <div className="flex flex-col">
+                            {navItem.items.map((item, itemIndex) => {
+                              const IconComponent = item.icon;
+                              return (
+                                <a
+                                  key={itemIndex}
+                                  href={item.href}
+                                  className={cn(
+                                    "flex items-center gap-3 px-8 py-3 text-sm transition-colors",
+                                    "text-muted-foreground hover:text-[#4F26B7] hover:bg-accent/50"
+                                  )}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  <IconComponent className="h-4 w-4 flex-shrink-0" />
+                                  <span>{item.label}</span>
+                                </a>
+                              );
+                            })}
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </nav>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
-    </header>;
+    </header>
+  );
 };
+
 export default Header;
