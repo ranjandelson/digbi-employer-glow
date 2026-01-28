@@ -101,22 +101,30 @@ interface DropdownMenuProps {
     icon: React.ComponentType<{ className?: string }>;
   }[];
   isOpen: boolean;
-  onToggle: () => void;
+  onOpen: () => void;
   onClose: () => void;
   id: string;
 }
 
-const DropdownMenu = ({ label, items, isOpen, onToggle, onClose, id }: DropdownMenuProps) => {
+const DropdownMenu = ({ label, items, isOpen, onOpen, onClose, id }: DropdownMenuProps) => {
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Clear timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        triggerRef.current &&
-        !triggerRef.current.contains(event.target as Node)
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
       ) {
         onClose();
       }
@@ -143,19 +151,40 @@ const DropdownMenu = ({ label, items, isOpen, onToggle, onClose, id }: DropdownM
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      onToggle();
+      if (isOpen) {
+        onClose();
+      } else {
+        onOpen();
+      }
     }
+  };
+
+  const handleMouseEnter = () => {
+    // Clear any pending close timeout
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    onOpen();
+  };
+
+  const handleMouseLeave = () => {
+    // Delay closing to allow moving to dropdown content
+    closeTimeoutRef.current = setTimeout(() => {
+      onClose();
+    }, 150);
   };
 
   return (
     <div 
+      ref={containerRef}
       className="relative"
-      onMouseEnter={onToggle}
-      onMouseLeave={onClose}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <button
         ref={triggerRef}
-        onClick={onToggle}
+        onClick={() => isOpen ? onClose() : onOpen()}
         onKeyDown={handleKeyDown}
         aria-haspopup="true"
         aria-expanded={isOpen}
@@ -178,32 +207,34 @@ const DropdownMenu = ({ label, items, isOpen, onToggle, onClose, id }: DropdownM
 
       {isOpen && (
         <div
-          ref={menuRef}
           id={`dropdown-${id}`}
           role="menu"
           aria-orientation="vertical"
-          className="absolute top-full left-0 mt-1 min-w-[220px] bg-background border border-border rounded-lg shadow-lg py-2 z-50 animate-fade-in"
+          className="absolute top-full left-0 pt-1 z-50"
         >
-          {items.map((item, index) => {
-            const IconComponent = item.icon;
-            return (
-              <a
-                key={index}
-                href={item.href}
-                role="menuitem"
-                className={cn(
-                  "flex items-center gap-3 px-4 py-2.5 text-sm transition-colors",
-                  "text-muted-foreground hover:text-[#4F26B7] hover:bg-accent/50",
-                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#4F26B7]"
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <IconComponent className="h-4 w-4 flex-shrink-0" />
-                <span>{item.label}</span>
-              </a>
-            );
-          })}
+          {/* Invisible bridge to prevent gap issues */}
+          <div className="min-w-[220px] bg-background border border-border rounded-lg shadow-lg py-2 animate-fade-in">
+            {items.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <a
+                  key={index}
+                  href={item.href}
+                  role="menuitem"
+                  className={cn(
+                    "flex items-center gap-3 px-4 py-2.5 text-sm transition-colors",
+                    "text-muted-foreground hover:text-[#4F26B7] hover:bg-accent/50",
+                    "focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#4F26B7]"
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <IconComponent className="h-4 w-4 flex-shrink-0" />
+                  <span>{item.label}</span>
+                </a>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>
@@ -214,8 +245,8 @@ const Header = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleDropdownToggle = (label: string) => {
-    setOpenDropdown(openDropdown === label ? null : label);
+  const handleDropdownOpen = (label: string) => {
+    setOpenDropdown(label);
   };
 
   const handleDropdownClose = () => {
@@ -244,7 +275,7 @@ const Header = () => {
                     label={navItem.label}
                     items={navItem.items}
                     isOpen={openDropdown === navItem.label}
-                    onToggle={() => handleDropdownToggle(navItem.label)}
+                    onOpen={() => handleDropdownOpen(navItem.label)}
                     onClose={handleDropdownClose}
                     id={navItem.label.toLowerCase().replace(/\s+/g, "-")}
                   />
