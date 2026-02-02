@@ -258,7 +258,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="flex items-center h-16 lg:h-20">
           {/* Logo - flex: 0 0 auto */}
-          <a href="/" className="flex-shrink-0 flex items-center">
+          <a href="https://digbihealth.ai/" className="flex-shrink-0 flex items-center">
             <img 
               src="https://cdn.shopify.com/s/files/1/2078/0145/files/digbi_logo.svg" 
               alt="Digbi Health" 
@@ -299,7 +299,7 @@ const Header = () => {
               <div className="flex flex-col h-full">
                 {/* Mobile Header */}
                 <div className="flex items-center justify-between p-4 border-b border-border">
-                  <a href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                  <a href="https://digbihealth.ai/" onClick={() => setIsMobileMenuOpen(false)}>
                     <img 
                       src="https://cdn.shopify.com/s/files/1/2078/0145/files/digbi_logo.svg" 
                       alt="Digbi Health" 

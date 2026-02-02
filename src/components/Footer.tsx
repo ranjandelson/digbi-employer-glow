@@ -142,7 +142,7 @@ const Footer = () => {
           <div className="space-y-6">
             {/* Logo */}
             <a 
-              href="/" 
+              href="https://digbihealth.ai/" 
               className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-foreground rounded-sm"
               aria-label="Digbi Health Home"
             >
