@@ -1,105 +1,211 @@
-import { Heart } from "lucide-react";
-import digbiLogoWhite from "@/assets/digbi-health-logo-white.png";
+import { MapPin, Linkedin, Youtube, Facebook, Instagram } from "lucide-react";
+
+// Footer configuration - easily update links and content here
+const footerConfig = {
+  address: {
+    line1: "800 El Camino Real West, Suite 180",
+    line2: "Mountain View, CA, United States, 94040",
+  },
+  social: [
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/company/digbihealth/",
+      icon: Linkedin,
+    },
+    {
+      label: "YouTube",
+      href: "https://www.youtube.com/@digbihealth8695",
+      icon: Youtube,
+    },
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/digbihealth/",
+      icon: Facebook,
+    },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/digbihealth/",
+      icon: Instagram,
+    },
+  ],
+  columns: {
+    partner: {
+      title: "Partner",
+      links: [
+        { label: "Employers & Payers", href: "https://digbihealth.com/pages/partner" },
+        { label: "Health Care Providers", href: "https://digbihealth.com/pages/health-care-providers" },
+      ],
+    },
+    resources: {
+      title: "Resources",
+      links: [
+        { label: "Humans of Digbi", href: "https://digbihealth.com/blogs/humans-of-digbi" },
+        { label: "Member Reviews", href: "https://digbihealth.com/pages/reviews" },
+        { label: "Blog: Pharma & Science", href: "https://digbihealth.com/blogs/science-talk" },
+        { label: "Published Research", href: "https://digbihealth.com/blogs/published-research" },
+      ],
+    },
+    company: {
+      title: "Company",
+      links: [
+        { label: "About Us", href: "https://digbihealth.com/pages/about-us" },
+        { label: "Press Releases", href: "https://digbihealth.com/blogs/press-release" },
+        { label: "Careers", href: "https://digbihealth.com/a/careers" },
+        { label: "Events", href: "https://digbihealth.com/pages/digbi-live" },
+        { label: "Help", href: "https://digbihealth.com/pages/help" },
+        { label: "Contact Us", href: "mailto:digbi@digbihealth.com" },
+      ],
+    },
+  },
+  legal: [
+    { label: "Cookie Preferences", href: "https://cdn.shopify.com/s/files/1/2078/0145/files/Cookie_Policy_-_Digbi_Health.pdf?v=1686228768" },
+    { label: "Privacy", href: "https://digbihealth.com/pages/privacy-and-accuracy" },
+    { label: "Terms", href: "https://digbihealth.com/pages/terms-conditions" },
+  ],
+};
+
+interface FooterLinkProps {
+  href: string;
+  children: React.ReactNode;
+  isEmail?: boolean;
+}
+
+const FooterLink = ({ href, children, isEmail = false }: FooterLinkProps) => (
+  <a
+    href={href}
+    className="text-muted-foreground hover:text-primary focus:text-primary transition-colors duration-150 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-foreground rounded-sm"
+    {...(!isEmail && { target: "_blank", rel: "noopener noreferrer" })}
+  >
+    {children}
+  </a>
+);
+
+interface FooterColumnProps {
+  title: string;
+  links: { label: string; href: string }[];
+}
+
+const FooterColumn = ({ title, links }: FooterColumnProps) => (
+  <nav aria-labelledby={`footer-${title.toLowerCase().replace(/\s+/g, "-")}`}>
+    <h3
+      id={`footer-${title.toLowerCase().replace(/\s+/g, "-")}`}
+      className="font-semibold text-background mb-4 text-sm uppercase tracking-wide"
+    >
+      {title}
+    </h3>
+    <ul className="space-y-3" role="list">
+      {links.map((link) => (
+        <li key={link.label}>
+          <FooterLink href={link.href} isEmail={link.href.startsWith("mailto:")}>
+            {link.label}
+          </FooterLink>
+        </li>
+      ))}
+    </ul>
+  </nav>
+);
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = {
-    company: [
-      { label: "About Us", href: "https://digbihealth.com/pages/about-us" },
-      { label: "Press", href: "https://digbihealth.com/blogs/press-release" },
-      { label: "Contact", href: "#" },
-    ],
-    solutions: [
-      { label: "For Employers", href: "#employers" },
-      { label: "For Health Plans", href: "https://digbihealth.com/" },
-    ],
-    resources: [
-      { label: "Blog", href: "https://digbihealth.com/blogs/science-talk" },
-      { label: "Research", href: "#" },
-      { label: "Case Studies", href: "https://cdn.shopify.com/s/files/1/2078/0145/files/Blue_Collar_Case_Study_Digbi_Health.pdf?v=1736155367" },
-      { label: "FAQs", href: "#faqs" },
-    ],
-  };
-
   return (
-    <footer className="bg-foreground text-background py-16 lg:py-20">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
-          {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <a href="/" className="flex items-center mb-6">
-              <img src={digbiLogoWhite} alt="Digbi Health" className="h-10 w-auto" />
+    <footer className="bg-foreground text-background" role="contentinfo">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-12 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+          {/* Column 1 - Brand, Address & Social */}
+          <div className="space-y-6">
+            {/* Logo */}
+            <a 
+              href="/" 
+              className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-foreground rounded-sm"
+              aria-label="Digbi Health Home"
+            >
+              <img
+                src="https://cdn.shopify.com/s/files/1/2078/0145/files/digbi_logo.svg"
+                alt="Digbi Health"
+                className="h-10 w-auto brightness-0 invert"
+              />
             </a>
-            <p className="text-background/70 text-sm leading-relaxed mb-6">
-              Precision biology care to prevent and treat obesity, diabetes, and metabolic disorders.
-            </p>
-          </div>
 
-          {/* Company Links */}
-          <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
+            {/* Address */}
+            <address className="not-italic">
+              <div className="flex items-start gap-3 group">
+                <MapPin 
+                  className="h-5 w-5 mt-0.5 flex-shrink-0 text-muted-foreground group-hover:text-primary transition-colors duration-150" 
+                  aria-hidden="true"
+                />
+                <div className="text-sm text-muted-foreground leading-relaxed">
+                  <p>{footerConfig.address.line1}</p>
+                  <p>{footerConfig.address.line2}</p>
+                </div>
+              </div>
+            </address>
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-4">
+              {footerConfig.social.map((social) => {
+                const IconComponent = social.icon;
+                return (
                   <a
-                    href={link.href}
-                    className="text-background/70 hover:text-background transition-colors text-sm"
-                    {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Follow Digbi Health on ${social.label}`}
+                    className="text-muted-foreground hover:text-primary focus:text-primary transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-foreground rounded-sm p-1"
                   >
-                    {link.label}
+                    <IconComponent className="h-5 w-5" aria-hidden="true" />
                   </a>
-                </li>
-              ))}
-            </ul>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Solutions Links */}
-          <div>
-            <h4 className="font-semibold mb-4">Solutions</h4>
-            <ul className="space-y-3">
-              {footerLinks.solutions.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-background/70 hover:text-background transition-colors text-sm"
-                    {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Column 2 - Partner */}
+          <FooterColumn
+            title={footerConfig.columns.partner.title}
+            links={footerConfig.columns.partner.links}
+          />
 
-          {/* Resources Links */}
-          <div>
-            <h4 className="font-semibold mb-4">Resources</h4>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-background/70 hover:text-background transition-colors text-sm"
-                    {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Column 3 - Resources */}
+          <FooterColumn
+            title={footerConfig.columns.resources.title}
+            links={footerConfig.columns.resources.links}
+          />
 
+          {/* Column 4 - Company */}
+          <FooterColumn
+            title={footerConfig.columns.company.title}
+            links={footerConfig.columns.company.links}
+          />
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-background/10 pt-8">
+      {/* Bottom Bar */}
+      <div className="border-t border-background/10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-background/60 text-sm">
-              © {currentYear} Digbi Health. All rights reserved.
+            {/* Copyright */}
+            <p className="text-muted-foreground text-sm text-center md:text-left">
+              © Digbi Health {currentYear}. All rights reserved.
             </p>
-            <p className="text-background/60 text-sm flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-primary fill-current" /> for better health
-            </p>
+
+            {/* Legal Links */}
+            <nav aria-label="Legal links">
+              <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-6" role="list">
+                {footerConfig.legal.map((link, index) => (
+                  <li key={link.label} className="flex items-center gap-4 md:gap-6">
+                    <FooterLink href={link.href}>{link.label}</FooterLink>
+                    {index < footerConfig.legal.length - 1 && (
+                      <span className="hidden md:inline text-muted-foreground/50" aria-hidden="true">
+                        ·
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
