@@ -62,7 +62,7 @@ const footerConfig = {
     partner: {
       title: "Partner",
       links: [
-        { label: "Employers & Payers", href: "https://digbihealth.com/pages/partner" },
+        { label: "Employers & Payers", href: "https://employer.digbihealth.ai/" },
         { label: "Health Care Providers", href: "https://digbihealth.com/pages/health-care-providers" },
       ],
     },
