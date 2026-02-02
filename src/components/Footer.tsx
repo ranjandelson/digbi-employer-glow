@@ -89,7 +89,7 @@ const FooterColumn = ({ title, links }: FooterColumnProps) => (
   <nav aria-labelledby={`footer-${title.toLowerCase().replace(/\s+/g, "-")}`}>
     <h3
       id={`footer-${title.toLowerCase().replace(/\s+/g, "-")}`}
-      className="font-semibold text-background mb-4 text-sm uppercase tracking-wide"
+      className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wide"
     >
       {title}
     </h3>
@@ -109,7 +109,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-foreground text-background" role="contentinfo">
+    <footer className="bg-[#d2d2d5] text-foreground" role="contentinfo">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
@@ -124,7 +124,7 @@ const Footer = () => {
               <img
                 src="https://cdn.shopify.com/s/files/1/2078/0145/files/digbi_logo.svg"
                 alt="Digbi Health"
-                className="h-10 w-auto brightness-0 invert"
+                className="h-10 w-auto"
               />
             </a>
 
