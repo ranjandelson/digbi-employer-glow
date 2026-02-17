@@ -24,7 +24,7 @@ const HeroSection = () => {
             animationDelay: "0.1s"
           }}>
               Treat Five Conditions with{" "}
-              <span className="text-gradient">Precision Biology</span>
+              <span className="text-gradient">One Platform using Precision Biology</span>
             </h1>
 
             {/* Subheadline */}
