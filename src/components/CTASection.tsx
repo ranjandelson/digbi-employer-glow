@@ -10,12 +10,12 @@ const CTASection = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Headline */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
-            Ready to transform your benefits?
-          </h2>
-          <p className="text-primary-foreground/80 mb-10 max-w-2xl mx-auto text-3xl">
-            Over 100 Employers trust us. Precision Biology is not the future of care. It is the new standard. 
-          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">Ready to transform your health benefits?
+
+        </h2>
+          <p className="text-primary-foreground/80 mb-10 max-w-2xl mx-auto text-3xl">Over 300 Employers trust us. Precision Biology is not the future of care. It is the new standard.
+
+        </p>
 
 
           {/* Contact Options */}
