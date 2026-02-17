@@ -13,7 +13,7 @@ const CTASection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">Ready to transform your health benefits?
 
         </h2>
-          <p className="text-primary-foreground/80 mb-10 max-w-2xl mx-auto text-3xl">Over 300 Employers trust us. Precision Biology is not the future of care. It is the new standard.
+          <p className="text-primary-foreground/80 mb-10 max-w-2xl mx-auto text-3xl">Over 300 employers use Digbi Health. Precision Biology is not the future of care. It is the new standard.
 
         </p>
 
