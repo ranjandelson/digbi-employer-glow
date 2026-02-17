@@ -24,13 +24,13 @@ const HeroSection = () => {
             animationDelay: "0.1s"
           }}>
               Treat five conditions with{" "}
-              <span className="text-gradient">One Platform using Precision Biology</span>
+              <span className="text-gradient">Precision Biology</span>
             </h1>
 
             {/* Subheadline */}
             <p style={{
             animationDelay: "0.2s"
-          }} className="max-w-lg animate-fade-in text-2xl text-[#5c527a]">Curb healthcare costs with ONE platform across Obesity, Metabolic and GI Conditions</p>
+          }} className="max-w-lg animate-fade-in text-2xl text-[#5c527a]">Curb healthcare costs with ONE platform across Obesity, GI, Diabetes, Heart Health Conditions</p>
 
           </div>
 
