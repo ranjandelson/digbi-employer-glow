@@ -23,14 +23,14 @@ const HeroSection = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight animate-fade-in" style={{
             animationDelay: "0.1s"
           }}>
-              Treat Metabolic and GI conditions with{" "}
-              <span className="text-gradient">Precision Biology</span>
+              Treat five conditions with{" "}
+              <span className="text-gradient">One Platform using Precision Biology</span>
             </h1>
 
             {/* Subheadline */}
             <p style={{
             animationDelay: "0.2s"
-          }} className="max-w-lg animate-fade-in text-2xl text-[#5c527a]">Curb healthcare costs with ONE platform across Obesity, GI, Diabetes, Heart Health Conditions</p>
+          }} className="max-w-lg animate-fade-in text-2xl text-[#5c527a]">Curb healthcare costs with ONE platform to manage GLP-1, Weightloss GI, Diabetes, Heart Health Conditions</p>
 
           </div>
 
