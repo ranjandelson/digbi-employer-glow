@@ -23,7 +23,7 @@ const HeroSection = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight animate-fade-in" style={{
             animationDelay: "0.1s"
           }}>
-              Treat five conditions with{" "}
+              Treat Metabolic and GI conditions with{" "}
               <span className="text-gradient">Precision Biology</span>
             </h1>
 
