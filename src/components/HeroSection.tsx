@@ -30,7 +30,7 @@ const HeroSection = () => {
             {/* Subheadline */}
             <p style={{
             animationDelay: "0.2s"
-          }} className="max-w-lg animate-fade-in text-2xl text-[#5c527a]">Manage GLP-1/Obesity, Diabetes, Digestive, Heart and Autoimmune health costs.</p>
+          }} className="max-w-lg animate-fade-in text-2xl text-[#5c527a]">Manage GLP-1/Obesity, Diabetes, Digestive, Heart and Autoimmune healthcare costs.</p>
 
           </div>
 
