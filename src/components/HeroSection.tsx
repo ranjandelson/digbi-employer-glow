@@ -24,7 +24,7 @@ const HeroSection = () => {
             animationDelay: "0.1s"
           }}>
               Complete Care for Metabolic and GI Conditions{" "}
-              <span className="text-gradient">using Precision Biology</span>
+              <span className="text-gradient">Precision Biology</span>
             </h1>
 
             {/* Subheadline */}
