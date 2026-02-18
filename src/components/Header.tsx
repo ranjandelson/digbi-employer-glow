@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, ChevronDown, Briefcase, Stethoscope, Users, Star, FlaskConical, FileText, Info, Newspaper, Calendar, HelpCircle, UserCheck, Pill } from "lucide-react";
+import { Menu, ChevronDown, Briefcase, Stethoscope, Users, Star, FlaskConical, FileText, Info, Newspaper, Calendar, HelpCircle, UserCheck, Pill, HeartPulse } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Sheet,
@@ -16,6 +16,16 @@ import {
 
 // Navigation configuration - easily update items and icons here
 const navConfig = [
+  {
+    label: "Program",
+    items: [
+      { 
+        label: "GI Health", 
+        href: "https://digestive.digbihealth.ai/",
+        icon: HeartPulse
+      },
+    ],
+  },
   {
     label: "Partner",
     items: [
