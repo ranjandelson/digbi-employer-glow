@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, ChevronDown, Briefcase, Stethoscope, Users, Star, FlaskConical, FileText, Info, Newspaper, Calendar, HelpCircle, UserCheck, Pill, HeartPulse } from "lucide-react";
+import { Menu, ChevronDown, Briefcase, Stethoscope, Users, Star, FlaskConical, FileText, Info, Newspaper, Calendar, HelpCircle, UserCheck, Pill, HeartPulse, Compass } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Sheet,
@@ -19,6 +19,11 @@ const navConfig = [
   {
     label: "Program",
     items: [
+      { 
+        label: "GLP Compass", 
+        href: "https://glpcompass.digbihealth.ai/",
+        icon: Compass
+      },
       { 
         label: "GI Health", 
         href: "https://digestive.digbihealth.ai/",
@@ -71,7 +76,7 @@ const navConfig = [
       },
       { 
         label: "The Medication Toolkit", 
-        href: "https://glpcompass.digbihealth.ai/",
+        href: "https://medicationtoolkit.digbihealth.ai",
         icon: Pill
       },
     ],
