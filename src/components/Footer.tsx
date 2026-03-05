@@ -73,6 +73,7 @@ const footerConfig = {
         { label: "Member Reviews", href: "https://digbihealth.com/pages/reviews" },
         { label: "Blog: Pharma & Science", href: "https://digbihealth.com/blogs/science-talk" },
         { label: "Published Research", href: "https://digbihealth.com/blogs/published-research" },
+        { label: "Clinical Research", href: "https://research.digbihealth.ai/" },
         { label: "The Medication Toolkit", href: "https://medicationtoolkit.digbihealth.ai" },
       ],
     },
