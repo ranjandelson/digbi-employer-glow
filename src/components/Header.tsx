@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, ChevronDown, Briefcase, Stethoscope, Users, Star, FlaskConical, FileText, Info, Newspaper, Calendar, HelpCircle, UserCheck, Pill, HeartPulse, Compass } from "lucide-react";
+import { Menu, ChevronDown, Briefcase, Stethoscope, Users, Star, FlaskConical, FileText, Info, Newspaper, Calendar, HelpCircle, UserCheck, Pill, HeartPulse, Compass, GraduationCap } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Sheet,
@@ -75,7 +75,12 @@ const navConfig = [
         icon: FileText
       },
       { 
-        label: "The Medication Toolkit", 
+        label: "Clinical Research", 
+        href: "https://research.digbihealth.ai/",
+        icon: GraduationCap
+      },
+      { 
+        label: "The Medication Toolkit",
         href: "https://medicationtoolkit.digbihealth.ai",
         icon: Pill
       },
